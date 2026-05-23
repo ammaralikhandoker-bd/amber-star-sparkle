@@ -98,7 +98,7 @@ const CertificatesSection = () => {
           <motion.div
             whileHover={{ y: -8, rotateX: 4, rotateY: -4, scale: 1.015 }}
             transition={{ type: 'spring', stiffness: 180, damping: 16 }}
-            className="relative w-full max-w-2xl group"
+            className="relative w-full max-w-md group"
             style={{ perspective: 1200, transformStyle: 'preserve-3d' }}
           >
             {/* Rotating conic halo */}
