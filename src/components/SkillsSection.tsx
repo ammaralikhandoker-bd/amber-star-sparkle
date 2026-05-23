@@ -4,36 +4,36 @@ import { Users, TrendingUp, Sparkles } from 'lucide-react';
 type Skill = { name: string; level: number };
 
 const hrSkills: Skill[] = [
-  { name: 'Recruitment & Talent Acquisition', level: 92 },
-  { name: 'HR Operations & ERP / HRIS', level: 90 },
-  { name: 'Payroll & Compensation', level: 85 },
-  { name: 'Performance Management', level: 82 },
-  { name: 'Labor Law & Compliance (BD)', level: 78 },
-  { name: 'Training & Development', level: 80 },
+  { name: 'HRIS / ERP Operations', level: 92 },
+  { name: 'Employee Onboarding & Records', level: 90 },
+  { name: 'Attendance & HR Reporting', level: 88 },
+  { name: 'Office Administration', level: 86 },
+  { name: 'Inventory & Stock Reconciliation', level: 85 },
+  { name: 'MIS Reporting & Documentation', level: 88 },
 ];
 
 const digitalSkills: Skill[] = [
+  { name: 'SEO & Google Ads', level: 86 },
+  { name: 'Meta Ads (Facebook / Instagram)', level: 88 },
   { name: 'Social Media Management', level: 90 },
-  { name: 'Content Strategy & Copywriting', level: 86 },
-  { name: 'Meta Ads (Facebook / Instagram)', level: 84 },
-  { name: 'SEO & Google Ads', level: 80 },
-  { name: 'Email Marketing & Automation', level: 78 },
-  { name: 'Analytics & Reporting', level: 82 },
+  { name: 'Lead Generation', level: 87 },
+  { name: 'Canva & Graphic Design', level: 92 },
+  { name: 'WordPress & Web Design', level: 82 },
 ];
 
 const aiSkills: Skill[] = [
   { name: 'Prompt Engineering', level: 92 },
-  { name: 'Google Gemini (Pro User)', level: 90 },
-  { name: 'ChatGPT / GPT-5 (Pro User)', level: 90 },
-  { name: 'Claude (Pro User)', level: 86 },
-  { name: 'DeepSeek (Pro User)', level: 84 },
-  { name: 'Canva AI — Creative Designer', level: 88 },
+  { name: 'ChatGPT / OpenAI Models', level: 90 },
+  { name: 'Google Gemini (Pro)', level: 88 },
+  { name: 'Claude (Pro)', level: 86 },
+  { name: 'AI Agents & Automation', level: 84 },
+  { name: 'Canva AI — Creative Design', level: 90 },
 ];
 
 const tools = [
-  'BambooHR', 'LinkedIn Recruiter', 'Workday', 'Microsoft Excel', 'Google Workspace',
-  'Canva', 'WordPress', 'Meta Business Suite', 'Google Analytics', 'Mailchimp',
-  'ChatGPT', 'Gemini', 'Claude', 'DeepSeek',
+  'HRIS', 'ERP Software', 'MS Excel', 'MS Word', 'PowerPoint', 'Outlook',
+  'Google Workspace', 'Canva', 'Freepik', 'WordPress', 'Video Editing',
+  'Meta Business Suite', 'Google Ads', 'ChatGPT', 'Gemini', 'Claude',
 ];
 
 const titleVariants = {

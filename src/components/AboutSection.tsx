@@ -268,7 +268,7 @@ const EducationCard = () => (
       <GitBranch className="w-3 h-3 text-purple-400" />
       <p className="text-muted-foreground text-xs uppercase tracking-wider">Education</p>
     </div>
-    <p className="relative text-foreground font-medium text-sm">BSS (Social Science)</p>
+    <p className="relative text-foreground font-medium text-sm">BSS · Kurigram Govt. College</p>
   </motion.div>
 );
 
@@ -316,18 +316,22 @@ const AboutSection = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/30 mb-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
+              <span className="text-xs font-medium text-secondary">Gov. Verified Freelancer · ICT Division, Bangladesh</span>
+            </div>
             <h3 className="font-display font-bold text-lg text-foreground mb-3">Professional Summary</h3>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-              Highly organized and detail-oriented professional with 5+ years of experience 
-              in Data Entry, ERP Systems, and Admin Support. I specialize in managing large 
-              datasets, Inventory Management, and HRIS workflows. My goal is to use technology 
-              to drive organizational efficiency.
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-4">
+              Results-driven HR, Admin & Digital Marketing professional with <span className="text-foreground font-semibold">5+ years</span> of hands-on
+              experience across ERP/HRIS operations, inventory management, MIS reporting, and digital campaigns.
+              Government Verified Freelancer (ID: F126497733229) skilled in AI tools, Prompt Engineering,
+              WordPress, Canva, and Video Editing.
             </p>
             <ul className="space-y-2 text-muted-foreground text-sm">
               {[
-                { color: 'bg-primary', text: 'Expert in ERP systems, HRIS workflows & inventory management' },
-                { color: 'bg-secondary', text: 'Bangladesh Government Certified Freelancer' },
-                { color: 'bg-primary', text: 'AI automation & SEO specialist driving digital growth' },
+                { color: 'bg-primary', text: 'HRIS / ERP operations · onboarded 100+ employees with 99% data accuracy' },
+                { color: 'bg-secondary', text: '50+ digital campaigns delivered · 500+ qualified leads generated' },
+                { color: 'bg-primary', text: 'AI-powered workflows · Prompt Engineering, ChatGPT, Gemini, Claude' },
               ].map((item, i) => (
                 <motion.li
                   key={i}
