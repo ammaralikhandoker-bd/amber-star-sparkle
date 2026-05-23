@@ -41,11 +41,6 @@ const imageVariants = {
   },
 };
 
-const floatAnimation = {
-  y: [-8, 8, -8],
-  transition: { duration: 4, repeat: Infinity, ease: 'easeInOut' as const },
-};
-
 const HeroSection = () => {
   return (
     <section className="min-h-screen flex items-center justify-center pt-20 px-4" aria-label="Hero">
@@ -163,7 +158,7 @@ const HeroSection = () => {
                 />
               </div>
 
-              <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full p-1 shadow-2xl ring-glow-indigo">
+              <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full p-1 shadow-2xl">
                 <div className="w-full h-full rounded-full overflow-hidden bg-card">
                   <img
                     src={profileImage}

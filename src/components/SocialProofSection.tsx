@@ -34,26 +34,6 @@ const SocialProofSection = () => {
             transition={{ type: 'spring', stiffness: 200, damping: 15 }}
             className="relative col-span-1 sm:col-span-2 group"
           >
-            {/* Animated gradient glow border */}
-            <motion.div
-              animate={{ opacity: [0.4, 0.8, 0.4] }}
-              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute -inset-[1px] rounded-2xl blur-md hidden sm:block"
-              style={{ background: 'var(--gradient-primary)' }}
-            />
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
-              className="absolute -inset-[1px] rounded-2xl opacity-60 hidden sm:block"
-              style={{
-                background: 'conic-gradient(from 0deg, hsl(var(--primary)), hsl(var(--secondary)), transparent 60%, hsl(var(--primary)))',
-                WebkitMask: 'linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)',
-                WebkitMaskComposite: 'xor',
-                maskComposite: 'exclude',
-                padding: '1.5px',
-              }}
-            />
-
             <div className="relative glass-card rounded-2xl p-6 overflow-hidden">
               {/* Sweeping shine */}
               <motion.div
