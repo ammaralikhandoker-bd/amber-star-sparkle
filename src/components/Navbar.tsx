@@ -66,7 +66,7 @@ const Navbar = () => {
           />
         </motion.a>
 
-        <ul className="hidden md:flex items-center gap-0.5">
+        <ul className="hidden lg:flex items-center gap-0.5">
           {navItems.map((item, i) => {
             const Icon = item.icon;
             return (
@@ -109,7 +109,8 @@ const Navbar = () => {
         <motion.button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           whileTap={{ scale: 0.9 }}
-          className="md:hidden text-foreground p-2"
+          className="lg:hidden text-foreground p-2"
+          aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
         </motion.button>
@@ -122,7 +123,7 @@ const Navbar = () => {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border overflow-hidden"
+            className="lg:hidden bg-background/95 backdrop-blur-xl border-b border-border overflow-hidden"
           >
             <ul className="container mx-auto px-4 py-3 flex flex-col gap-0.5">
               {navItems.map((item) => {
