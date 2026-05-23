@@ -88,14 +88,14 @@ const HeroSection = () => {
               variants={itemVariants}
               className="text-lg md:text-xl font-medium text-foreground mb-2"
             >
-              HR Specialist | Digital Marketing | Data Entry Expert
+              HR &amp; Admin · Digital Marketing · Data Entry Expert
             </motion.p>
 
             <motion.p
               variants={itemVariants}
               className="text-muted-foreground text-base md:text-lg mb-4"
             >
-              Empowering businesses with streamlined HR, precise data management & creative digital solutions.
+              5+ years streamlining HR operations, ERP data &amp; growth campaigns. Government Verified Freelancer (ICT Division, Bangladesh).
             </motion.p>
             
             <motion.div
