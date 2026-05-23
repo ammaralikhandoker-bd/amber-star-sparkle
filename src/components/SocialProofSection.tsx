@@ -59,6 +59,39 @@ const SocialProofSection = () => {
               <div className="relative flex flex-col sm:flex-row items-center gap-5">
                 {/* Left: LinkedIn icon */}
                 <div className="relative w-24 h-24 shrink-0 flex items-center justify-center">
+                  {/* Pulse rings */}
+                  {[0, 0.6, 1.2].map((delay, i) => (
+                    <motion.span
+                      key={i}
+                      animate={{ scale: [1, 1.6], opacity: [0.5, 0] }}
+                      transition={{ duration: 2.2, repeat: Infinity, ease: 'easeOut', delay }}
+                      className="absolute w-14 h-14 rounded-2xl border border-primary/40"
+                    />
+                  ))}
+
+                  {/* Rotating dashed ring */}
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 14, repeat: Infinity, ease: 'linear' }}
+                    className="absolute w-20 h-20 rounded-full border border-dashed border-primary/30"
+                  />
+
+                  {/* Orbiting nodes */}
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+                    className="absolute w-20 h-20"
+                  >
+                    <span className="absolute top-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_hsl(var(--primary))]" />
+                  </motion.div>
+                  <motion.div
+                    animate={{ rotate: -360 }}
+                    transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
+                    className="absolute w-20 h-20"
+                  >
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-secondary shadow-[0_0_8px_hsl(var(--secondary))]" />
+                  </motion.div>
+
                   <div
                     className="relative w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg"
                     style={{ background: 'var(--gradient-primary)', boxShadow: 'var(--glow-indigo)' }}
