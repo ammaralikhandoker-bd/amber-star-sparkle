@@ -277,16 +277,16 @@ const CertificatesSection = () => {
                         <span>{cert.date}</span>
                       </div>
                       {cert.credential && (
-                        <motion.a
+                      <motion.a
                           href={cert.credential}
                           target="_blank"
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.08, x: 2 }}
                           whileTap={{ scale: 0.94 }}
-                          className={`inline-flex items-center gap-1 text-xs px-2 py-1 rounded-full border ${style.accent === 'primary' ? 'border-primary/30 text-primary hover:bg-primary/10' : 'border-secondary/30 text-secondary hover:bg-secondary/10'} transition-colors`}
+                          className={`inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full border ${style.accent === 'primary' ? 'border-primary/30 text-primary hover:bg-primary/10' : 'border-secondary/30 text-secondary hover:bg-secondary/10'} transition-colors whitespace-nowrap`}
                         >
                           Show credential
-                          <ExternalLink className="w-3 h-3" />
+                          <ExternalLink className="w-3.5 h-3.5 flex-shrink-1" />
                         </motion.a>
                       )}
                     </div>
