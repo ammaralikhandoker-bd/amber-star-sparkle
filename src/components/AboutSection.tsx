@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, GraduationCap, Send, PhoneCall, Navigation, BookOpen, GitBranch, Copy, Check } from 'lucide-react';
 import { useState } from 'react';
 import { toast } from 'sonner';
-import aboutPhoto from '@/assets/about-photo.png';
+import aboutPhoto from '@/assets/about-photo.jpg';
 
 const containerVariants = {
   hidden: { opacity: 0 },

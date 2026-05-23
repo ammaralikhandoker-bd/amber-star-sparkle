@@ -4,10 +4,10 @@ import { useRef, useState, useEffect, useCallback } from 'react';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
-import gallery1 from '@/assets/gallery-1.png';
-import gallery2 from '@/assets/gallery-2.png';
-import gallery3 from '@/assets/gallery-3.png';
-import gallery4 from '@/assets/gallery-4.png';
+import gallery1 from '@/assets/gallery-1.jpg';
+import gallery2 from '@/assets/gallery-2.jpg';
+import gallery3 from '@/assets/gallery-3.jpg';
+import gallery4 from '@/assets/gallery-4.jpg';
 
 const photos = [
   {

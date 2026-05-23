@@ -117,7 +117,7 @@ const HeroSection = () => {
                   style={{ background: 'var(--gradient-primary)', boxShadow: 'var(--glow-indigo)' }}
                   aria-label="Download CV"
                 >
-                  <a href="/cv.pdf" download>
+                  <a href="/cv.pdf" download="CV of Md. Amber Ali Khandoker.pdf">
                     <Download className="mr-2 h-5 w-5" />
                     Download CV
                   </a>

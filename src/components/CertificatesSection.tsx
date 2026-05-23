@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Award, Calendar, ExternalLink, BadgeCheck, ShieldCheck, X, Maximize2, Sparkles, Star, Trophy, Medal, Crown, Zap, Flame, Gem, Rocket, Target } from 'lucide-react';
-import freelancerIdCard from '@/assets/freelancer-id-card.png';
+import freelancerIdCard from '@/assets/freelancer-id-card.jpg';
 
 const certificates = [
   { name: 'Deep Dive into OpenAI Models: Master o3, o4-mini & Beyond', issuer: 'Udemy', date: 'Jan 2026', credential: 'https://www.udemy.com/certificate/UC-da299e1d-71cd-4fc3-aeaf-fb74a0e41133/' },
