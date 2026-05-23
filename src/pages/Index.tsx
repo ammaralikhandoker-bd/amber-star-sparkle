@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import NetworkBackground from '@/components/NetworkBackground';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
@@ -23,19 +23,30 @@ const WhatsAppWidget = lazy(() => import('@/components/WhatsAppWidget'));
 const AIChatbot = lazy(() => import('@/components/AIChatbot'));
 
 const SectionSkeleton = () => (
-  <div className="py-20 px-4">
-    <div className="container mx-auto max-w-5xl space-y-6">
-      <div className="h-10 w-64 mx-auto rounded-lg bg-muted/30 animate-pulse" />
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {[1, 2, 3].map(i => (
-          <div key={i} className="h-40 rounded-xl bg-muted/20 animate-pulse" />
-        ))}
-      </div>
+  <div className="py-20 px-4" aria-hidden="true">
+    <div className="container mx-auto max-w-5xl">
+      <div className="h-40 rounded-xl bg-muted/10 animate-pulse" />
     </div>
   </div>
 );
 
+// Wraps each section so they stream/hydrate independently (faster TTI)
+const LazySection = ({ children }: { children: React.ReactNode }) => (
+  <Suspense fallback={<SectionSkeleton />}>{children}</Suspense>
+);
+
 const Index = () => {
+  // Defer floating widgets until browser is idle — keeps main thread free at first paint
+  const [showWidgets, setShowWidgets] = useState(false);
+  useEffect(() => {
+    const w = window as Window & { requestIdleCallback?: (cb: () => void) => number };
+    const schedule = w.requestIdleCallback || ((cb: () => void) => setTimeout(cb, 1500));
+    const id = schedule(() => setShowWidgets(true));
+    return () => {
+      if (typeof id === 'number') clearTimeout(id);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen">
       <ScrollProgress />
@@ -43,26 +54,28 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <Suspense fallback={<SectionSkeleton />}>
-          <SocialProofSection />
-          <StatsSection />
-          <AboutSection />
-          <GallerySection />
-          <ExperienceSection />
-          <CertificatesSection />
-          <SkillsSection />
-          <ServicesSection />
-          <ProjectsSection />
-          <TestimonialsSection />
-          <InsightsSection />
-          <ContactSection />
-        </Suspense>
+        <LazySection><SocialProofSection /></LazySection>
+        <LazySection><StatsSection /></LazySection>
+        <LazySection><AboutSection /></LazySection>
+        <LazySection><GallerySection /></LazySection>
+        <LazySection><ExperienceSection /></LazySection>
+        <LazySection><CertificatesSection /></LazySection>
+        <LazySection><SkillsSection /></LazySection>
+        <LazySection><ServicesSection /></LazySection>
+        <LazySection><ProjectsSection /></LazySection>
+        <LazySection><TestimonialsSection /></LazySection>
+        <LazySection><InsightsSection /></LazySection>
+        <LazySection><ContactSection /></LazySection>
       </main>
       <Suspense fallback={null}>
         <Footer />
-        <BackToTop />
-        <WhatsAppWidget />
-        <AIChatbot />
+        {showWidgets && (
+          <>
+            <BackToTop />
+            <WhatsAppWidget />
+            <AIChatbot />
+          </>
+        )}
       </Suspense>
     </div>
   );
