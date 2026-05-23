@@ -161,7 +161,7 @@ const SkillsSection = () => {
             icon={Users}
             skills={hrSkills}
             accent="indigo"
-            delay={3}
+            delay={0}
             iconColor="hsl(244 80% 69%)"
             borderColor="hsl(244 80% 69% / 0.35)"
           />
