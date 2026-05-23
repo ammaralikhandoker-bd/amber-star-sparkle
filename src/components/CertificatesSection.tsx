@@ -175,7 +175,7 @@ const CertificatesSection = () => {
 
               <img
                 src={freelancerIdCard}
-                alt="MD. Ammar Ali Khandoker — Bangladesh Government Certified Freelancer ID Card (Digital Marketing)"
+                alt="MD. Amber Ali Khandoker — Bangladesh Government Certified Freelancer ID Card (Digital Marketing)"
                 className="block w-full h-auto relative cursor-zoom-in"
                 loading="lazy"
                 decoding="async"
@@ -317,7 +317,7 @@ const CertificatesSection = () => {
               </motion.button>
               <motion.img
                 src={freelancerIdCard}
-                alt="MD. Ammar Ali Khandoker — Bangladesh Government Certified Freelancer ID Card (Digital Marketing)"
+                alt="MD. Amber Ali Khandoker — Bangladesh Government Certified Freelancer ID Card (Digital Marketing)"
                 initial={{ scale: 0.85, opacity: 0, y: 20 }}
                 animate={{ scale: 1, opacity: 1, y: 0 }}
                 exit={{ scale: 0.9, opacity: 0, y: 10 }}

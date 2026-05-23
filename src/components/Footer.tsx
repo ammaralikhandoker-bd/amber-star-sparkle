@@ -13,7 +13,7 @@ const quickLinks = [
 const socials = [
   { icon: Linkedin, href: 'https://www.linkedin.com/in/ammar-khandoker-bd', label: 'LinkedIn' },
   { icon: Facebook, href: 'https://www.facebook.com/share/187NdGsk4e/', label: 'Facebook' },
-  { icon: Mail, href: 'mailto:mdammarkhandokar19@gmail.com', label: 'Email' },
+  { icon: Mail, href: 'mailto:mdamberalikhandoker@outlook.com', label: 'Email' },
   { icon: MessageCircle, href: 'https://wa.me/8801716861353', label: 'WhatsApp' },
 ];
 
@@ -71,7 +71,7 @@ const Footer = () => {
 
         <div className="text-center pt-6 border-t border-border/40">
           <p className="text-muted-foreground text-xs">
-            © {new Date().getFullYear()} MD. Ammar Ali Khandoker. All Rights Reserved.
+            © {new Date().getFullYear()} MD. Amber Ali Khandoker. All Rights Reserved.
           </p>
         </div>
       </div>

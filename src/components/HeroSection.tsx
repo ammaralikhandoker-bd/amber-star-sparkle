@@ -74,7 +74,7 @@ const HeroSection = () => {
               variants={itemVariants}
               className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold mb-2 text-foreground"
             >
-              MD. AMMAR ALI
+              MD. AMBER ALI
             </motion.h1>
             
             <motion.h1
@@ -117,7 +117,7 @@ const HeroSection = () => {
                   style={{ background: 'var(--gradient-primary)', boxShadow: 'var(--glow-indigo)' }}
                   aria-label="Download CV"
                 >
-                  <a href="https://ammar-khandoker-bd.github.io/Amber-Ali/cv.pdf" download>
+                  <a href="/cv.pdf" download>
                     <Download className="mr-2 h-5 w-5" />
                     Download CV
                   </a>
@@ -261,7 +261,7 @@ const HeroSection = () => {
                 <div className="w-full h-full rounded-full overflow-hidden bg-card">
                   <img
                     src={profileImage}
-                    alt="MD. Ammar Ali Khandoker — HR Specialist & Digital Professional"
+                    alt="MD. Amber Ali Khandoker — HR Specialist & Digital Professional"
                     className="w-full h-full object-cover object-[center_15%] scale-[1.05]"
                     loading="eager"
                     width={384}

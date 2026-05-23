@@ -17,7 +17,7 @@ const testimonials: Testimonial[] = [
     role: 'HR Manager',
     company: 'RFL Electronics Ltd.',
     rating: 5,
-    text: "Ammar's attention to detail in HR operations and ERP systems was exceptional. He streamlined our employee onboarding and reduced administrative overhead noticeably.",
+    text: "Amber's attention to detail in HR operations and ERP systems was exceptional. He streamlined our employee onboarding and reduced administrative overhead noticeably.",
     initials: 'TH',
   },
   {
@@ -25,7 +25,7 @@ const testimonials: Testimonial[] = [
     role: 'Marketing Director',
     company: 'Nova Digital Agency',
     rating: 5,
-    text: 'Working with Ammar on our social campaigns was a delight. He understands both the creative and analytical side — our engagement nearly doubled in two months.',
+    text: 'Working with Amber on our social campaigns was a delight. He understands both the creative and analytical side — our engagement nearly doubled in two months.',
     initials: 'NR',
   },
   {
@@ -33,7 +33,7 @@ const testimonials: Testimonial[] = [
     role: 'Operations Lead',
     company: 'Step Media Limited',
     rating: 5,
-    text: 'Reliable, organized, and proactive. Ammar handles inventory and store operations with precision, and his digital skills are a big plus for the team.',
+    text: 'Reliable, organized, and proactive. Amber handles inventory and store operations with precision, and his digital skills are a big plus for the team.',
     initials: 'MR',
   },
   {
