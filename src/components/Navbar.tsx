@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, User, Briefcase, Award, Settings, Mail, Lightbulb, MessageSquare } from 'lucide-react';
 import profileImage from '@/assets/profile.jpg';
+import logoImage from '@/assets/logo-amber-ali.png';
 
 const navItems = [
   { label: 'About', href: '#about', icon: User },
@@ -53,12 +54,16 @@ const Navbar = () => {
           href="#"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="flex items-center gap-3"
+          className="flex items-center gap-2"
+          aria-label="Amber Ali — Home"
         >
-          <img src={profileImage} alt="Amber Ali" className="w-9 h-9 rounded-full border-2 border-primary/60 object-cover ring-2 ring-secondary/30" />
-          <span className="font-display font-bold text-base text-foreground">
-            AMMAR <span className="text-primary">ALI</span>
-          </span>
+          <img
+            src={logoImage}
+            alt="Amber Ali logo"
+            className="h-9 md:h-10 w-auto"
+            width={180}
+            height={40}
+          />
         </motion.a>
 
         <ul className="hidden md:flex items-center gap-0.5">

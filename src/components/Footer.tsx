@@ -30,10 +30,10 @@ const Footer = () => {
         <div className="grid sm:grid-cols-3 gap-8 mb-8">
           <div>
             <p className="font-display font-bold text-lg text-foreground mb-2">
-              MD. AMMAR <span className="text-gradient">ALI KHANDOKER</span>
+              MD. AMBER <span className="text-gradient">ALI KHANDOKER</span>
             </p>
             <p className="text-xs text-muted-foreground leading-relaxed">
-              HR Specialist & Digital Professional. Helping businesses streamline people, data and growth.
+              HR Specialist, Digital Marketing & Data Entry Professional. Government Verified Freelancer (ICT Division, Bangladesh).
             </p>
           </div>
 
