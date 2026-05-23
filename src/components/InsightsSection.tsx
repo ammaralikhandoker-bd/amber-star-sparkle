@@ -66,7 +66,7 @@ const InsightsSection = () => {
                   {insight.category}
                 </span>
                 <motion.a
-                  href="https://www.linkedin.com/in/ammar-khandoker-bd"
+                  href="https://www.linkedin.com/in/mdamberalikhandoker/"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2 }}
