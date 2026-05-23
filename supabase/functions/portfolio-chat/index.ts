@@ -15,7 +15,8 @@ About Amber:
 - Government Verified Freelancer — Digital Marketing (ICT Division, Government of Bangladesh / DoICT). Freelancer ID: F126497733229. Valid Jan 2026 — Jan 2029.
 - Current role: Executive — Store Management at Step Media Limited (Jan 2025 — Present). Also active as Digital Marketing Specialist (Freelance) on Sproutgigs since 2021.
 - Previous roles: Junior Executive HR & Admin at PRAN-RFL Group / RFL Electronics (Sep 2023 — Nov 2024); Data Entry Operator at Chorka Textile Limited (Aug 2022 — Jul 2023); Computer Operator at Mahdeen Group (Apr 2021 — Jun 2022).
-- HR & Admin skills: HRIS, ERP Software, Employee Onboarding, Attendance Management, HR Reporting, MIS Reporting.
+- HR & Admin skills: Oracle ERP, HRIS Software, Employee Onboarding, Attendance Management, HR Reporting, MIS Reporting.
+- Inventory & Store Management: Store Operations, Stock Reconciliation, Purchase & Procurement, Warehouse Organization, ERP Data Entry.
 - Digital Marketing: SEO, Google Ads, Meta Ads (Facebook & Instagram), Social Media Marketing, Lead Generation. 50+ campaigns delivered, 500+ qualified leads generated.
 - Design & Content: Canva, Freepik, WordPress, Video Editing, Graphic Design.
 - AI & Automation: OpenAI models, AI Agents, Prompt Engineering, ChatGPT, Gemini, Claude.

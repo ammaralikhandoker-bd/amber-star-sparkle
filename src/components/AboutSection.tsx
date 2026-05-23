@@ -329,7 +329,7 @@ const AboutSection = () => {
             </p>
             <ul className="space-y-2 text-muted-foreground text-sm">
               {[
-                { color: 'bg-primary', text: 'HRIS / ERP operations · onboarded 100+ employees with 99% data accuracy' },
+                { color: 'bg-primary', text: 'Oracle ERP / HRIS operations · onboarded 100+ employees with 99% data accuracy' },
                 { color: 'bg-secondary', text: '50+ digital campaigns delivered · 500+ qualified leads generated' },
                 { color: 'bg-primary', text: 'AI-powered workflows · Prompt Engineering, ChatGPT, Gemini, Claude' },
               ].map((item, i) => (
