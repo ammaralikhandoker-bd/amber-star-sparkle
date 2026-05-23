@@ -65,11 +65,11 @@ const CopyButton = ({ copied, onClick, label }: { copied: boolean; onClick: (e: 
 
 /* ============== Card 1 — EMAIL: paper-plane streak ============== */
 const EmailCard = () => {
-  const email = 'mdammarkhandokar19@gmail.com';
+  const email = 'mdamberalikhandoker@outlook.com';
   const { copied, copy } = useCopy();
   return (
   <motion.a
-    href="mailto:mdammarkhandokar19@gmail.com"
+    href="mailto:mdamberalikhandoker@outlook.com"
     custom={0}
     variants={cardVariants}
     whileHover={{ y: -6, scale: 1.03 }}
@@ -305,7 +305,7 @@ const AboutSection = () => {
                 className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 blur-2xl"
               />
               <div className="relative w-72 h-80 md:w-80 md:h-96 rounded-2xl overflow-hidden ring-glow-indigo">
-                <img src={aboutPhoto} alt="MD. Ammar Ali Khandoker" className="w-full h-full object-cover" loading="lazy" width={320} height={384} decoding="async" />
+                <img src={aboutPhoto} alt="MD. Amber Ali Khandoker" className="w-full h-full object-cover" loading="lazy" width={320} height={384} decoding="async" />
               </div>
             </motion.div>
           </motion.div>

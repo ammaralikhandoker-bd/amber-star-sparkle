@@ -45,7 +45,7 @@ const ContactSection = () => {
     setSending(true);
     const subject = formData.subject || `Portfolio Contact from ${formData.name}`;
     const body = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\n${formData.message}`;
-    const mailtoLink = `mailto:mdammarkhandokar19@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:mdamberalikhandoker@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setTimeout(() => {
       window.location.href = mailtoLink;
       setSending(false);
@@ -76,7 +76,7 @@ const ContactSection = () => {
           <motion.div variants={infoVariants} className="space-y-5">
             <div className="glass-card rounded-2xl p-6 space-y-4">
               {[
-                { href: 'mailto:mdammarkhandokar19@gmail.com', icon: Mail, label: 'Email', value: 'mdammarkhandokar19@gmail.com' },
+                { href: 'mailto:mdamberalikhandoker@outlook.com', icon: Mail, label: 'Email', value: 'mdamberalikhandoker@outlook.com' },
                 { href: 'tel:+8801716861353', icon: Phone, label: 'Phone', value: '+8801716-861353' },
                 { href: undefined, icon: MapPin, label: 'Location', value: 'Savar, Dhaka, Bangladesh' },
               ].map((item) => {

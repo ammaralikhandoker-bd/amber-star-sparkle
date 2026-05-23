@@ -10,7 +10,7 @@ type Message = { role: 'user' | 'assistant'; content: string };
 const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/portfolio-chat`;
 
 const SUGGESTIONS = [
-  "What are Ammar's skills?",
+  "What are Amber's skills?",
   "How can I contact him?",
   "Tell me about his experience",
   "Is he available for hire?",
@@ -170,7 +170,7 @@ const AIChatbot = () => {
                   <Bot className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <p className="font-display font-bold text-sm text-white leading-tight">Ammar's AI Assistant</p>
+                  <p className="font-display font-bold text-sm text-white leading-tight">Amber's AI Assistant</p>
                   <p className="text-[11px] text-white/70 flex items-center gap-1">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block" />
                     Online
@@ -199,7 +199,7 @@ const AIChatbot = () => {
                       <Sparkles className="w-6 h-6 text-primary" />
                     </div>
                     <p className="text-sm text-foreground font-medium mb-1">Hi there! 👋</p>
-                    <p className="text-xs text-muted-foreground">Ask me anything about Ammar's skills, experience, or availability.</p>
+                    <p className="text-xs text-muted-foreground">Ask me anything about Amber's skills, experience, or availability.</p>
                   </div>
 
                   <div className="space-y-2">

@@ -55,7 +55,7 @@ const Navbar = () => {
           whileTap={{ scale: 0.95 }}
           className="flex items-center gap-3"
         >
-          <img src={profileImage} alt="Ammar Ali" className="w-9 h-9 rounded-full border-2 border-primary/60 object-cover ring-2 ring-secondary/30" />
+          <img src={profileImage} alt="Amber Ali" className="w-9 h-9 rounded-full border-2 border-primary/60 object-cover ring-2 ring-secondary/30" />
           <span className="font-display font-bold text-base text-foreground">
             AMMAR <span className="text-primary">ALI</span>
           </span>
