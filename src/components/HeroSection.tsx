@@ -148,103 +148,9 @@ const HeroSection = () => {
             animate="visible"
             className="flex justify-center lg:justify-end"
           >
-            <motion.div className="relative" animate={floatAnimation}>
-              {/* Soft ambient glow */}
-              <motion.div
-                animate={{ opacity: [0.35, 0.6, 0.35], scale: [1, 1.08, 1] }}
-                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/30 via-primary/10 to-secondary/25 blur-3xl"
-              />
-
-              {/* Premium conic gradient halo (slow, refined) */}
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
-                className="absolute -inset-[6px] rounded-full"
-                style={{
-                  background:
-                    'conic-gradient(from 0deg, hsl(220 90% 65%) 0%, hsl(190 100% 55%) 25%, transparent 45%, transparent 55%, hsl(45 95% 55%) 75%, hsl(220 90% 65%) 100%)',
-                  filter: 'blur(1px)',
-                  opacity: 0.85,
-                }}
-              />
-
-              {/* Inner mask to convert halo into a clean ring */}
-              <div className="absolute -inset-[2px] rounded-full bg-background" />
-
-              {/* Counter-rotating dashed precision ring */}
-              <motion.div
-                animate={{ rotate: -360 }}
-                transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
-                className="absolute -inset-4 rounded-full pointer-events-none"
-                style={{
-                  border: '1px dashed hsl(190 100% 60% / 0.35)',
-                }}
-              />
-
-              {/* Outer pulse ring */}
-              <motion.div
-                animate={{ scale: [1, 1.06, 1], opacity: [0.45, 0.1, 0.45] }}
-                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute -inset-7 rounded-full pointer-events-none"
-                style={{ border: '1px solid hsl(220 90% 65% / 0.4)' }}
-              />
-              <motion.div
-                animate={{ scale: [1, 1.12, 1], opacity: [0.3, 0, 0.3] }}
-                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
-                className="absolute -inset-10 rounded-full pointer-events-none"
-                style={{ border: '1px solid hsl(190 100% 55% / 0.3)' }}
-              />
-
-              {/* Single orbiting accent node */}
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 9, repeat: Infinity, ease: 'linear' }}
-                className="absolute -inset-[6px] rounded-full pointer-events-none"
-              >
-                <span
-                  className="absolute left-1/2 -top-1 w-2.5 h-2.5 -translate-x-1/2 rounded-full bg-secondary"
-                  style={{
-                    boxShadow:
-                      '0 0 10px hsl(45 95% 55% / 0.95), 0 0 22px hsl(45 95% 55% / 0.55)',
-                  }}
-                />
-              </motion.div>
-              <motion.div
-                animate={{ rotate: -360 }}
-                transition={{ duration: 14, repeat: Infinity, ease: 'linear' }}
-                className="absolute -inset-[6px] rounded-full pointer-events-none"
-              >
-                <span
-                  className="absolute left-1/2 -top-1 w-2 h-2 -translate-x-1/2 rounded-full bg-primary"
-                  style={{
-                    boxShadow:
-                      '0 0 10px hsl(220 90% 65% / 0.95), 0 0 20px hsl(190 100% 55% / 0.55)',
-                  }}
-                />
-              </motion.div>
-
-              {/* Corner brackets — HUD style */}
-              {[
-                { top: '-10px', left: '-10px', borders: 'border-t-2 border-l-2 rounded-tl-xl' },
-                { top: '-10px', right: '-10px', borders: 'border-t-2 border-r-2 rounded-tr-xl' },
-                { bottom: '-10px', left: '-10px', borders: 'border-b-2 border-l-2 rounded-bl-xl' },
-                { bottom: '-10px', right: '-10px', borders: 'border-b-2 border-r-2 rounded-br-xl' },
-              ].map((p, i) => (
-                <motion.span
-                  key={i}
-                  animate={{ opacity: [0.5, 1, 0.5] }}
-                  transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut', delay: i * 0.2 }}
-                  className={`absolute w-5 h-5 ${p.borders} pointer-events-none`}
-                  style={{
-                    ...p,
-                    borderColor: 'hsl(190 100% 60% / 0.85)',
-                  }}
-                />
-              ))}
-
-              {/* Scanning beam */}
-              <div className="absolute inset-0 rounded-full overflow-hidden pointer-events-none mix-blend-screen">
+            <div className="relative">
+              {/* Scanning beam — inside the circle only */}
+              <div className="absolute inset-0 rounded-full overflow-hidden pointer-events-none mix-blend-screen z-10">
                 <motion.div
                   animate={{ y: ['-110%', '110%'] }}
                   transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', repeatDelay: 1.5 }}
@@ -271,7 +177,8 @@ const HeroSection = () => {
                   />
                 </div>
               </div>
-            </motion.div>
+            </div>
+
           </motion.div>
         </div>
       </div>
