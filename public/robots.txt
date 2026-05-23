@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://amber-star-sparkle.lovable.app/sitemap.xml
+Sitemap: https://amber.pro.bd/sitemap.xml
