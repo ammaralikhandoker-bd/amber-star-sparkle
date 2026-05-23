@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, User, Briefcase, Award, Settings, Mail, Lightbulb, MessageSquare } from 'lucide-react';
 import profileImage from '@/assets/profile.jpg';
-import logoImage from '@/assets/logo-amber-ali.jpg';
+import logoImage from '@/assets/logo-amber-ali.png';
 
 const navItems = [
   { label: 'About', href: '#about', icon: User },
