@@ -12,6 +12,7 @@ const GallerySection = lazy(() => import('@/components/GallerySection'));
 const ExperienceSection = lazy(() => import('@/components/ExperienceSection'));
 const CertificatesSection = lazy(() => import('@/components/CertificatesSection'));
 const SkillsSection = lazy(() => import('@/components/SkillsSection'));
+const ServicesSection = lazy(() => import('@/components/ServicesSection'));
 const ProjectsSection = lazy(() => import('@/components/ProjectsSection'));
 const TestimonialsSection = lazy(() => import('@/components/TestimonialsSection'));
 const InsightsSection = lazy(() => import('@/components/InsightsSection'));
