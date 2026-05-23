@@ -164,7 +164,7 @@ const SocialProofSection = () => {
                       className="text-primary-foreground hover:opacity-90 font-display text-xs group/btn relative overflow-hidden"
                       style={{ background: 'var(--gradient-primary)' }}
                     >
-                      <a href="https://www.linkedin.com/in/ammar-khandoker-bd" target="_blank" rel="noopener noreferrer">
+                      <a href="https://www.linkedin.com/in/mdamberalikhandoker/" target="_blank" rel="noopener noreferrer">
                         <Users className="mr-1.5 h-3 w-3" />
                         Connect on LinkedIn
                         <motion.span
