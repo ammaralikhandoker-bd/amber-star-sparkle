@@ -1,24 +1,25 @@
 import { motion } from 'framer-motion';
-import { Users, TrendingUp, Sparkles } from 'lucide-react';
+import { Users, Package, Sparkles, TrendingUp } from 'lucide-react';
 
 type Skill = { name: string; level: number };
+type Accent = 'indigo' | 'gold' | 'emerald' | 'cyan';
 
 const hrSkills: Skill[] = [
-  { name: 'HRIS / ERP Operations', level: 92 },
+  { name: 'Oracle ERP / HRIS Operations', level: 92 },
   { name: 'Employee Onboarding & Records', level: 90 },
   { name: 'Attendance & HR Reporting', level: 88 },
   { name: 'Office Administration', level: 86 },
-  { name: 'Inventory & Stock Reconciliation', level: 85 },
+  { name: 'Payroll Processing', level: 84 },
   { name: 'MIS Reporting & Documentation', level: 88 },
 ];
 
-const digitalSkills: Skill[] = [
-  { name: 'SEO & Google Ads', level: 86 },
-  { name: 'Meta Ads (Facebook / Instagram)', level: 88 },
-  { name: 'Social Media Management', level: 90 },
-  { name: 'Lead Generation', level: 87 },
-  { name: 'Canva & Graphic Design', level: 92 },
-  { name: 'WordPress & Web Design', level: 82 },
+const inventorySkills: Skill[] = [
+  { name: 'Store Operations & Management', level: 88 },
+  { name: 'ERP Data Entry & Maintenance', level: 90 },
+  { name: 'Inventory & Stock Reconciliation', level: 85 },
+  { name: 'Stock Auditing & Reporting', level: 86 },
+  { name: 'Purchase & Procurement', level: 82 },
+  { name: 'Warehouse Organization', level: 84 },
 ];
 
 const aiSkills: Skill[] = [
@@ -30,8 +31,17 @@ const aiSkills: Skill[] = [
   { name: 'Canva AI — Creative Design', level: 90 },
 ];
 
+const marketingSkills: Skill[] = [
+  { name: 'SEO & Google Ads', level: 86 },
+  { name: 'Meta Ads (Facebook / Instagram)', level: 88 },
+  { name: 'Social Media Management', level: 90 },
+  { name: 'Lead Generation', level: 87 },
+  { name: 'Canva & Graphic Design', level: 92 },
+  { name: 'WordPress & Web Design', level: 82 },
+];
+
 const tools = [
-  'HRIS', 'ERP Software', 'MS Excel', 'MS Word', 'PowerPoint', 'Outlook',
+  'Oracle ERP', 'HRIS Software', 'MS Excel', 'MS Word', 'PowerPoint', 'Outlook',
   'Google Workspace', 'Canva', 'Freepik', 'WordPress', 'Video Editing',
   'Meta Business Suite', 'Google Ads', 'ChatGPT', 'Gemini', 'Claude',
 ];
@@ -41,8 +51,15 @@ const titleVariants = {
   visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.6 } },
 };
 
-const SkillBar = ({ skill, accent, index }: { skill: Skill; accent: 'indigo' | 'cyan'; index: number }) => {
-  const barColor = accent === 'indigo' ? 'hsl(244 80% 69%)' : 'hsl(190 100% 50%)';
+const accentMap: Record<Accent, string> = {
+  indigo: 'hsl(244 80% 69%)',
+  gold: 'hsl(45 95% 55%)',
+  emerald: 'hsl(142 76% 55%)',
+  cyan: 'hsl(190 100% 50%)',
+};
+
+const SkillBar = ({ skill, accent, index }: { skill: Skill; accent: Accent; index: number }) => {
+  const barColor = accentMap[accent];
   return (
     <motion.div
       initial={{ opacity: 0, y: 12 }}
@@ -73,6 +90,55 @@ const SkillBar = ({ skill, accent, index }: { skill: Skill; accent: 'indigo' | '
   );
 };
 
+const SkillCard = ({
+  title,
+  subtitle,
+  icon: Icon,
+  skills,
+  accent,
+  delay = 0,
+  iconColor,
+  borderColor,
+}: {
+  title: string;
+  subtitle: string;
+  icon: typeof Users;
+  skills: Skill[];
+  accent: Accent;
+  delay?: number;
+  iconColor: string;
+  borderColor: string;
+}) => (
+  <motion.div
+    initial={{ opacity:  0, y: 30, filter: 'blur(6px)' }}
+    whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+    viewport={{ once: true, margin: '-60px' }}
+    transition={{ duration: 0.6, delay }}
+    className="glass-card rounded-2xl p-6 md:p-8"
+  >
+    <div className="flex items-center gap-3 mb-6">
+      <div
+        className="w-11 h-11 rounded-xl flex items-center justify-center border"
+        style={{
+          background: `${iconColor.replace(')', ' / 0.12)')}`,
+          borderColor: `${iconColor.replace(')', ' / 0.35)')}`,
+        }}
+      >
+        <Icon className="w-5 h-5" style={{ color: iconColor }} />
+      </div>
+      <div>
+        <h3 className="font-display font-bold text-lg text-foreground">{title}</h3>
+        <p className="text-xs text-muted-foreground">{subtitle}</p>
+      </div>
+    </div>
+    <div className="space-y-4">
+      {skills.map((s, i) => (
+        <SkillBar key={s.name} skill={s} accent={accent} index={i} />
+      ))}
+    </div>
+  </motion.div>
+);
+
 const SkillsSection = () => {
   return (
     <section id="skills" className="py-20 px-4" aria-label="Skills & Expertise">
@@ -88,74 +154,54 @@ const SkillsSection = () => {
         </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-6 mb-10">
-          {/* HR Skills */}
-          <motion.div
-            initial={{ opacity: 0, x: -30, filter: 'blur(6px)' }}
-            whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.6 }}
-            className="glass-card rounded-2xl p-6 md:p-8"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-11 h-11 rounded-xl bg-primary/15 border border-primary/30 flex items-center justify-center">
-                <Users className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <h3 className="font-display font-bold text-lg text-foreground">HR Skills</h3>
-                <p className="text-xs text-muted-foreground">People · Process · Compliance</p>
-              </div>
-            </div>
-            <div className="space-y-4">
-              {hrSkills.map((s, i) => <SkillBar key={s.name} skill={s} accent="indigo" index={i} />)}
-            </div>
-          </motion.div>
+          {/* 1. HR Skills */}
+          <SkillCard
+            title="HR Skills"
+            subtitle="People · Process · Compliance"
+            icon={Users}
+            skills={hrSkills}
+            accent="indigo"
+            delay={3}
+            iconColor="hsl(244 80% 69%)"
+            borderColor="hsl(244 80% 69% / 0.35)"
+          />
 
-          {/* Digital Skills */}
-          <motion.div
-            initial={{ opacity: 0, x: 30, filter: 'blur(6px)' }}
-            whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.6 }}
-            className="glass-card rounded-2xl p-6 md:p-8"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-11 h-11 rounded-xl bg-secondary/15 border border-secondary/30 flex items-center justify-center">
-                <TrendingUp className="w-5 h-5 text-secondary" />
-              </div>
-              <div>
-                <h3 className="font-display font-bold text-lg text-foreground">Digital Skills</h3>
-                <p className="text-xs text-muted-foreground">Marketing · Content · Growth</p>
-              </div>
-            </div>
-            <div className="space-y-4">
-              {digitalSkills.map((s, i) => <SkillBar key={s.name} skill={s} accent="cyan" index={i} />)}
-            </div>
-          </motion.div>
+          {/* 2. Inventory & Store Management */}
+          <SkillCard
+            title="Inventory & Store Management"
+            subtitle="Stock · Systems · Operations"
+            icon={Package}
+            skills={inventorySkills}
+            accent="gold"
+            delay={0.1}
+            iconColor="hsl(45 95% 55%)"
+            borderColor="hsl(45 95% 55% / 0.35)"
+          />
+
+          {/* 3. AI Skills */}
+          <SkillCard
+            title="AI Skills"
+            subtitle="Prompt Engineering · Pro AI Tools · Creative Design"
+            icon={Sparkles}
+            skills={aiSkills}
+            accent="emerald"
+            delay={0.2}
+            iconColor="hsl(142 76% 55%)"
+            borderColor="hsl(142 76% 55% / 0.35)"
+          />
+
+          {/* 4. Digital Marketing */}
+          <SkillCard
+            title="Digital Marketing"
+            subtitle="Marketing · Content · Growth"
+            icon={TrendingUp}
+            skills={marketingSkills}
+            accent="cyan"
+            delay={0.3}
+            iconColor="hsl(190 100% 50%)"
+            borderColor="hsl(190 100% 50% / 0.35)"
+          />
         </div>
-
-        {/* AI Skills */}
-        <motion.div
-          initial={{ opacity: 0, y: 30, filter: 'blur(6px)' }}
-          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.6 }}
-          className="glass-card rounded-2xl p-6 md:p-8 mb-10"
-        >
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 border border-primary/30 flex items-center justify-center">
-              <Sparkles className="w-5 h-5 text-primary" />
-            </div>
-            <div>
-              <h3 className="font-display font-bold text-lg text-foreground">AI Skills</h3>
-              <p className="text-xs text-muted-foreground">Prompt Engineering · Pro AI Tools · Creative Design</p>
-            </div>
-          </div>
-          <div className="grid md:grid-cols-2 gap-x-8 gap-y-4">
-            {aiSkills.map((s, i) => (
-              <SkillBar key={s.name} skill={s} accent={i % 2 === 0 ? 'indigo' : 'cyan'} index={i} />
-            ))}
-          </div>
-        </motion.div>
 
         {/* Tools */}
         <motion.div
