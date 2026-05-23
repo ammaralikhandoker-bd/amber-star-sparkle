@@ -173,29 +173,35 @@ const CertificatesSection = () => {
                 style={{ background: 'linear-gradient(90deg, transparent, hsl(var(--secondary)/0.7), transparent)' }}
               />
 
-              <img
-                src={freelancerIdCard}
-                alt="MD. Amber Ali Khandoker — Bangladesh Government Certified Freelancer ID Card (Digital Marketing)"
-                className="block w-full h-auto relative cursor-zoom-in"
-                loading="lazy"
-                decoding="async"
-                onClick={() => setLightboxOpen(true)}
-              />
-              <motion.button
-                type="button"
-                onClick={() => setLightboxOpen(true)}
-                whileHover={{ scale: 1.08 }}
-                whileTap={{ scale: 0.94 }}
-                aria-label="View full-screen"
-                className="absolute top-3 left-3 z-20 inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1.5 rounded-full bg-background/70 backdrop-blur-md border border-border text-foreground hover:text-primary"
-              >
-                <Maximize2 className="w-3.5 h-3.5" />
-                Full view
-              </motion.button>
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-3 px-5 py-4 border-t border-border bg-card/80">
-                <div className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground text-center sm:text-left">
-                  <ShieldCheck className="w-4 h-4 text-secondary flex-shrink-0" />
-                  <span>Issued by Department of ICT, Government of Bangladesh</span>
+              {/* Image with inner padding frame */}
+              <div className="relative p-3 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5">
+                <div className="relative overflow-hidden rounded-xl ring-1 ring-primary/20">
+                  <img
+                    src={freelancerIdCard}
+                    alt="MD. Amber Ali Khandoker — Bangladesh Government Certified Freelancer ID Card (Digital Marketing)"
+                    className="block w-full h-auto cursor-zoom-in"
+                    loading="lazy"
+                    decoding="async"
+                    onClick={() => setLightboxOpen(true)}
+                  />
+                  <motion.button
+                    type="button"
+                    onClick={() => setLightboxOpen(true)}
+                    whileHover={{ scale: 1.08 }}
+                    whileTap={{ scale: 0.94 }}
+                    aria-label="View full-screen"
+                    className="absolute top-2 left-2 z-20 inline-flex items-center gap-1 text-[10px] font-medium px-2 py-1 rounded-full bg-background/80 backdrop-blur-md border border-border text-foreground hover:text-primary"
+                  >
+                    <Maximize2 className="w-3 h-3" />
+                    Full view
+                  </motion.button>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-2 px-4 py-3 border-t border-border bg-card/80">
+                <div className="flex items-center gap-2 text-[11px] sm:text-xs text-muted-foreground text-center sm:text-left">
+                  <ShieldCheck className="w-3.5 h-3.5 text-secondary flex-shrink-0" />
+                  <span>Issued by Department of ICT, Govt. of Bangladesh</span>
                 </div>
                 <motion.a
                   href="https://www.freelancers.gov.bd/verify/a1c55d0c-8ea9-42d1-b819-821d74dab442-sh-1768654010-y-71ec91545d5f23dc2711da0539b750e76e30eab4-a-m-075db42fdd41b6d2b6b2b7f4c71e271a6e29244b"
@@ -203,12 +209,12 @@ const CertificatesSection = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full text-primary-foreground shadow-md"
+                  className="inline-flex items-center gap-1 text-[11px] font-semibold px-2.5 py-1 rounded-full text-primary-foreground shadow-md"
                   style={{ background: 'var(--gradient-primary)' }}
                 >
-                  <BadgeCheck className="w-3.5 h-3.5" />
-                  Verify Credential
-                  <ExternalLink className="w-3 h-3" />
+                  <BadgeCheck className="w-3 h-3" />
+                  Verify
+                  <ExternalLink className="w-2.5 h-2.5" />
                 </motion.a>
               </div>
             </div>
