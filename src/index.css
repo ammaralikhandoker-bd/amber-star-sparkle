@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 215 28% 7%;
+    --foreground: 210 40% 98%;
+
+    --card: 215 28% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 215 28% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 244 80% 69%;
+    --primary-foreground: 215 28% 7%;
+
+    --secondary: 190 100% 50%;
+    --secondary-foreground: 215 28% 7%;
+
+    --muted: 215 24% 15%;
+    --muted-foreground: 215 16% 68%;
+
+    --accent: 190 100% 50%;
+    --accent-foreground: 215 28% 7%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 22% 18%;
+    --input: 215 22% 18%;
+    --ring: 244 80% 69%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --glow-indigo: 0 0 24px hsl(244 80% 69% / 0.45);
+    --glow-cyan: 0 0 24px hsl(190 100% 50% / 0.45);
+    /* legacy aliases — kept for any older references */
+    --glow-blue: var(--glow-indigo);
+    --glow-gold: var(--glow-cyan);
+    --gradient-primary: linear-gradient(135deg, hsl(244 80% 69%), hsl(190 100% 50%));
+    --gradient-bg: radial-gradient(ellipse at top, hsl(244 40% 10%) 0%, hsl(220 35% 7%) 35%, hsl(215 30% 5%) 75%);
+    --glass-bg: hsl(215 28% 12% / 0.55);
+    --glass-border: hsl(0 0% 100% / 0.08);
+    
+    --sidebar-background: 215 28% 9%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 244 80% 69%;
+    --sidebar-primary-foreground: 215 28% 7%;
+    --sidebar-accent: 215 24% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 215 22% 18%;
+    --sidebar-ring: 244 80% 69%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+    background: var(--gradient-bg);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .border-gradient {
+    border: 2px solid transparent;
+    background: linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
+                var(--gradient-primary) border-box;
+  }
+
+  .glow-indigo, .glow-blue {
+    box-shadow: var(--glow-indigo);
+  }
+
+  .glow-cyan, .glow-gold {
+    box-shadow: var(--glow-cyan);
+  }
+
+  .glow-text-indigo, .glow-text-blue {
+    text-shadow: 0 0 10px hsl(244 80% 69% / 0.6), 0 0 30px hsl(244 80% 69% / 0.3);
+  }
+
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border: 1px solid var(--glass-border);
+  }
+
+  .ring-glow-indigo {
+    box-shadow: 0 0 0 1px hsl(244 80% 69% / 0.4), 0 0 36px hsl(244 80% 69% / 0.35), 0 0 80px hsl(190 100% 50% / 0.18);
+  }
+
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--glow-indigo);
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-center mb-12;
+  }
+
+  .network-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+  }
+}
+
+/* Mobile perf: drop expensive backdrop-filter, simplify glow shadows */
+@media (max-width: 767px) {
+  .glass-card {
+    background: hsl(215 28% 11% / 0.92);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .ring-glow-indigo {
+    box-shadow: 0 0 0 1px hsl(244 80% 69% / 0.4), 0 0 16px hsl(244 80% 69% / 0.25);
+  }
+  html { scroll-behavior: auto; }
+  /* Reduce expensive decorative blurs on mobile (kept visible, just cheaper) */
+  .blur-3xl { filter: blur(24px) !important; }
+  .blur-2xl { filter: blur(18px) !important; }
+  .blur-xl  { filter: blur(12px) !important; }
+  .blur-lg  { filter: blur(8px) !important; }
+  /* Disable backdrop-blur utilities on mobile */
+  [class*="backdrop-blur"] {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.4);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
