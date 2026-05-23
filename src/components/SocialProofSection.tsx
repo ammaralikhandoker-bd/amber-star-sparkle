@@ -77,47 +77,14 @@ const SocialProofSection = () => {
               </div>
 
               <div className="relative flex flex-col sm:flex-row items-center gap-5">
-                {/* Left: Animated LinkedIn orbit */}
+                {/* Left: LinkedIn icon */}
                 <div className="relative w-24 h-24 shrink-0 flex items-center justify-center">
-                  {/* Pulse rings */}
-                  {[0, 1, 2].map((i) => (
-                    <motion.span
-                      key={i}
-                      className="absolute inset-0 rounded-full border border-primary/40 hidden sm:block"
-                      animate={{ scale: [1, 1.6], opacity: [0.6, 0] }}
-                      transition={{ duration: 2.4, repeat: Infinity, ease: 'easeOut', delay: i * 0.8 }}
-                    />
-                  ))}
-                  {/* Rotating ring */}
-                  <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
-                    className="absolute inset-0 rounded-full border-2 border-dashed border-secondary/40 hidden sm:block"
-                  />
-                  {/* Orbiting nodes */}
-                  <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
-                    className="absolute inset-0 hidden sm:block"
-                  >
-                    <span className="absolute left-1/2 -top-1 -translate-x-1/2 w-2 h-2 rounded-full bg-secondary shadow-[0_0_10px_hsl(var(--secondary))]" />
-                  </motion.div>
-                  <motion.div
-                    animate={{ rotate: -360 }}
-                    transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-                    className="absolute inset-0 hidden sm:block"
-                  >
-                    <span className="absolute -right-1 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_hsl(var(--primary))]" />
-                  </motion.div>
-                  {/* Center LinkedIn icon */}
-                  <motion.div
-                    whileHover={{ scale: 1.1, rotate: -8 }}
-                    transition={{ type: 'spring', stiffness: 250 }}
+                  <div
                     className="relative w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg"
                     style={{ background: 'var(--gradient-primary)', boxShadow: 'var(--glow-indigo)' }}
                   >
                     <Linkedin className="w-7 h-7 text-primary-foreground" fill="currentColor" />
-                  </motion.div>
+                  </div>
                 </div>
 
                 {/* Right: Counter + meta */}
