@@ -5,6 +5,8 @@ import sproutPerf from '@/assets/proof-sproutgigs-performance.jpg';
 import sproutSuccess from '@/assets/proof-sproutgigs-success.jpg';
 import stepStock from '@/assets/proof-stepmedia-stock.jpg';
 import rflAttendance from '@/assets/proof-rfl-attendance.jpg';
+import rflContractual from '@/assets/proof-rfl-contractual.jpg';
+import rflPiecemeal from '@/assets/proof-rfl-piecemeal.jpg';
 import rflHr from '@/assets/proof-rfl-hr.jpg';
 
 type Proof = {
@@ -48,6 +50,22 @@ const proofs: Proof[] = [
     icon: FileSpreadsheet,
     img: rflAttendance,
     highlights: ['Daily Present / Absent / Day-Off / Leave tracking', 'Department, section & shift-wise breakdown', 'Male/Female manpower summary (203 staff)', 'Multi-sheet: Total MP, Outgoing, Daily Basis Summary'],
+  },
+  {
+    title: 'PRAN-RFL — Contractual Manpower Attendance',
+    client: 'PRAN-RFL Group · DIP RFL THA',
+    tag: 'Contractual · Excel',
+    icon: FileSpreadsheet,
+    img: rflContractual,
+    highlights: ['Daily basic bill — Sept 2024 (Contractor: Habiba+Babul+Shohel+Akbar)', 'Per-worker date-wise hours (12h shifts)', 'Shift timing (8am–8pm / 8pm–8am)', 'Multi-tab: Pay Bill, Detail, Summary, OPM Wise'],
+  },
+  {
+    title: 'PRAN-RFL — Piece Meal Data Sheet',
+    client: 'PRAN-RFL Group · REL THA',
+    tag: 'Piece-rate · Excel',
+    icon: FileSpreadsheet,
+    img: rflPiecemeal,
+    highlights: ['Total OT calculation with VLOOKUP automation', 'Per-day salary + 4hr OT amount tracking', 'Attendance hour & income by date/shift', 'Designation, gender, job location breakdown'],
   },
   {
     title: 'PRAN-RFL — HR Confirmation Justify Sheet',
