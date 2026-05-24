@@ -20,7 +20,7 @@ const TestimonialsSection = lazy(() => import('@/components/TestimonialsSection'
 const InsightsSection = lazy(() => import('@/components/InsightsSection'));
 const ContactSection = lazy(() => import('@/components/ContactSection'));
 const Footer = lazy(() => import('@/components/Footer'));
-const BackToTop = lazy(() => import('@/components/BackToTop'));
+
 const WhatsAppWidget = lazy(() => import('@/components/WhatsAppWidget'));
 const AIChatbot = lazy(() => import('@/components/AIChatbot'));
 
@@ -75,7 +75,6 @@ const Index = () => {
         <Footer />
         {showWidgets && (
           <>
-            <BackToTop />
             <WhatsAppWidget />
             <AIChatbot />
           </>
