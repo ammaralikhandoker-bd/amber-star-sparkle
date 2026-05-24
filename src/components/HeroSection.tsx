@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
-import { MessageCircle, Download } from 'lucide-react';
+import { Download, BadgeCheck, Award, Briefcase, Users, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import TypewriterText from './TypewriterText';
 import profileImage from '@/assets/profile.jpg';
+
 
 const roles = [
   'HR Specialist',
