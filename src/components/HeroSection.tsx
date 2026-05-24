@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
-import { MessageCircle, Download } from 'lucide-react';
+import { Download, BadgeCheck, Award, Briefcase, Users, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import TypewriterText from './TypewriterText';
 import profileImage from '@/assets/profile.jpg';
+
 
 const roles = [
   'HR Specialist',
@@ -67,49 +68,104 @@ const HeroSection = () => {
 
             <motion.h1
               variants={itemVariants}
-              className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold mb-2 text-foreground"
+              className="font-display text-4xl md:text-5xl lg:text-[3.75rem] font-extrabold leading-[1.05] mb-4 text-foreground"
             >
-              MD. AMBER ALI
+              MD. Amber Ali{' '}
+              <span
+                className="bg-clip-text text-transparent"
+                style={{
+                  backgroundImage:
+                    'linear-gradient(90deg, hsl(244 80% 69%), hsl(220 80% 65%), hsl(190 100% 55%), hsl(180 95% 50%))',
+                }}
+              >
+                Khandoker
+              </span>
             </motion.h1>
-            
-            <motion.h1
-              variants={itemVariants}
-              className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4"
-            >
-              <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(90deg, hsl(244 80% 69%), hsl(220 80% 65%), hsl(190 100% 55%), hsl(180 95% 50%), hsl(190 100% 50%))' }}>KHANDOKER</span>
-            </motion.h1>
+
+            {/* Govt Verified badge */}
+            <motion.div variants={itemVariants} className="mb-4 flex flex-wrap gap-2 justify-center lg:justify-start">
+              <span
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border"
+                style={{
+                  background: 'hsl(43 96% 56% / 0.12)',
+                  borderColor: 'hsl(43 96% 56% / 0.35)',
+                  color: 'hsl(43 96% 70%)',
+                }}
+              >
+                <BadgeCheck className="w-3.5 h-3.5" />
+                Govt. Verified Freelancer · BD
+              </span>
+            </motion.div>
 
             <motion.p
               variants={itemVariants}
-              className="text-lg md:text-xl font-medium text-foreground mb-2"
+              className="text-lg md:text-xl font-medium text-foreground mb-3"
             >
               HR &amp; Admin · Digital Marketing · Data Entry Expert
             </motion.p>
 
             <motion.p
               variants={itemVariants}
-              className="text-muted-foreground text-base md:text-lg mb-4"
+              className="text-muted-foreground text-base md:text-lg mb-5 max-w-xl mx-auto lg:mx-0"
             >
-              5+ years streamlining HR operations, ERP data &amp; growth campaigns. Government Verified Freelancer (ICT Division, Bangladesh).
+              5+ years streamlining HR operations, ERP data &amp; growth campaigns for teams across Bangladesh.
             </motion.p>
-            
+
+            {/* Mini trust stats */}
             <motion.div
               variants={itemVariants}
-              className="text-muted-foreground text-lg md:text-xl mb-8 min-h-[2rem]"
+              className="mb-6 flex flex-wrap gap-2 justify-center lg:justify-start"
+            >
+              {[
+                { Icon: Award, label: '62+ Certifications' },
+                { Icon: Briefcase, label: '5+ Years Experience' },
+                { Icon: Users, label: '7K+ LinkedIn Network' },
+              ].map(({ Icon, label }) => (
+                <span
+                  key={label}
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-primary/10 border border-primary/20 text-primary"
+                >
+                  <Icon className="w-3.5 h-3.5" />
+                  {label}
+                </span>
+              ))}
+            </motion.div>
+
+            <motion.div
+              variants={itemVariants}
+              className="text-muted-foreground text-base md:text-lg mb-8 min-h-[2rem]"
             >
               <TypewriterText texts={roles} />
             </motion.div>
 
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start items-center"
             >
               <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.97 }}>
                 <Button
                   asChild
                   size="lg"
-                  className="text-primary-foreground font-display font-semibold tracking-wide hover:opacity-90"
-                  style={{ background: 'var(--gradient-primary)', boxShadow: 'var(--glow-indigo)' }}
+                  className="font-display font-semibold tracking-wide text-background hover:opacity-90"
+                  style={{
+                    background: 'linear-gradient(135deg, hsl(43 96% 56%), hsl(38 92% 50%))',
+                    boxShadow: '0 10px 30px -10px hsl(43 96% 56% / 0.55)',
+                  }}
+                  aria-label="Hire Me"
+                >
+                  <a href="#contact">
+                    Hire Me
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </a>
+                </Button>
+              </motion.div>
+
+              <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.97 }}>
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="border-primary/40 text-primary hover:bg-primary/10 hover:text-primary font-display font-semibold tracking-wide backdrop-blur-sm"
                   aria-label="Download CV"
                 >
                   <a href="/cv.pdf" download="CV of Md. Amber Ali Khandoker.pdf">
@@ -118,22 +174,15 @@ const HeroSection = () => {
                   </a>
                 </Button>
               </motion.div>
-              
-              <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.97 }}>
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className="border-secondary/60 text-secondary hover:bg-secondary/10 hover:text-secondary font-display font-semibold tracking-wide backdrop-blur-sm"
-                  aria-label="Contact Me"
-                >
-                  <a href="#contact">
-                    <MessageCircle className="mr-2 h-5 w-5" />
-                    Contact Me
-                  </a>
-                </Button>
-              </motion.div>
+
+              <a
+                href="#projects"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground underline-offset-4 hover:underline transition-colors"
+              >
+                View Work →
+              </a>
             </motion.div>
+
           </motion.div>
 
           {/* Profile Image */}
