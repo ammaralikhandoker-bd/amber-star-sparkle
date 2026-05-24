@@ -14,6 +14,7 @@ const CertificatesSection = lazy(() => import('@/components/CertificatesSection'
 const SkillsSection = lazy(() => import('@/components/SkillsSection'));
 const ServicesSection = lazy(() => import('@/components/ServicesSection'));
 const ProjectsSection = lazy(() => import('@/components/ProjectsSection'));
+const ProofOfWorkSection = lazy(() => import('@/components/ProofOfWorkSection'));
 const TestimonialsSection = lazy(() => import('@/components/TestimonialsSection'));
 const InsightsSection = lazy(() => import('@/components/InsightsSection'));
 const ContactSection = lazy(() => import('@/components/ContactSection'));
@@ -63,6 +64,7 @@ const Index = () => {
         <LazySection><SkillsSection /></LazySection>
         <LazySection><ServicesSection /></LazySection>
         <LazySection><ProjectsSection /></LazySection>
+        <LazySection><ProofOfWorkSection /></LazySection>
         <LazySection><TestimonialsSection /></LazySection>
         <LazySection><InsightsSection /></LazySection>
         <LazySection><ContactSection /></LazySection>
