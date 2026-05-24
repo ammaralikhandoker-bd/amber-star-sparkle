@@ -23,20 +23,5 @@ export default defineConfig(({ mode }) => ({
     cssCodeSplit: true,
     sourcemap: false,
     minify: "esbuild",
-    rollupOptions: {
-      output: {
-        // Split heavy vendor libs so initial JS is smaller and cacheable separately
-        manualChunks(id) {
-          if (!id.includes("node_modules")) return;
-          if (id.includes("framer-motion")) return "framer";
-          if (id.includes("react-dom") || id.includes("react/") || id.includes("react-router")) return "react-vendor";
-          if (id.includes("@radix-ui")) return "radix";
-          if (id.includes("lucide-react")) return "icons";
-          if (id.includes("recharts") || id.includes("d3-")) return "charts";
-          if (id.includes("@supabase")) return "supabase";
-          return "vendor";
-        },
-      },
-    },
   },
 }));
