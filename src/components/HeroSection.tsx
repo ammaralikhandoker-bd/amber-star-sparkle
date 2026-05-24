@@ -68,28 +68,59 @@ const HeroSection = () => {
 
             <motion.h1
               variants={itemVariants}
-              className="font-display mb-4 flex flex-col items-center lg:items-start gap-1"
+              className="font-display mb-4 flex flex-col items-center lg:items-start gap-2"
             >
-              <span className="text-lg md:text-2xl font-extralight tracking-[0.35em] uppercase text-[hsl(43_96%_62%)]/90">
-                Md. Amber Ali
-              </span>
-              <span className="relative inline-block leading-none">
+              {/* MD. Amber Ali — 3D bold */}
+              <span className="relative inline-block leading-[0.95]">
                 <span
                   aria-hidden
-                  className="absolute -top-1 -left-1 text-6xl md:text-7xl lg:text-8xl font-extrabold italic tracking-tight select-none pointer-events-none opacity-30"
+                  className="absolute inset-0 text-4xl md:text-6xl lg:text-7xl font-black tracking-tight select-none pointer-events-none"
                   style={{
-                    WebkitTextStroke: '1px hsl(43 96% 56% / 0.55)',
-                    WebkitTextFillColor: 'transparent',
+                    color: 'hsl(43 96% 50%)',
+                    transform: 'translate(4px, 5px)',
+                    filter: 'blur(0.5px)',
+                    opacity: 0.45,
+                  }}
+                >
+                  MD. Amber Ali
+                </span>
+                <span
+                  className="relative text-4xl md:text-6xl lg:text-7xl font-black tracking-tight bg-clip-text text-transparent"
+                  style={{
+                    backgroundImage:
+                      'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 92%) 45%, hsl(220 30% 70%) 100%)',
+                    WebkitTextStroke: '1px hsl(220 60% 30% / 0.4)',
+                    textShadow:
+                      '0 1px 0 hsl(220 40% 80%), 0 2px 0 hsl(220 40% 70%), 0 3px 0 hsl(220 40% 60%), 0 4px 0 hsl(220 40% 50%), 0 6px 14px rgba(0,0,0,0.55)',
+                  }}
+                >
+                  MD. Amber Ali
+                </span>
+              </span>
+
+              {/* Khandoker — 3D bold gradient */}
+              <span className="relative inline-block leading-[0.95]">
+                <span
+                  aria-hidden
+                  className="absolute inset-0 text-5xl md:text-7xl lg:text-8xl font-black italic tracking-tight select-none pointer-events-none"
+                  style={{
+                    color: 'hsl(220 90% 35%)',
+                    transform: 'translate(5px, 6px)',
+                    filter: 'blur(0.5px)',
+                    opacity: 0.55,
                   }}
                 >
                   Khandoker
                 </span>
                 <span
-                  className="relative text-6xl md:text-7xl lg:text-8xl font-extrabold italic tracking-tight bg-clip-text text-transparent animate-name-shimmer drop-shadow-[0_10px_18px_rgba(0,0,0,0.45)]"
+                  className="relative text-5xl md:text-7xl lg:text-8xl font-black italic tracking-tight bg-clip-text text-transparent animate-name-shimmer"
                   style={{
                     backgroundImage:
-                      'linear-gradient(90deg, hsl(220 90% 65%), hsl(0 0% 100%), hsl(43 96% 60%), hsl(220 90% 65%))',
-                    backgroundSize: '200% auto',
+                      'linear-gradient(180deg, hsl(220 95% 78%) 0%, hsl(195 100% 60%) 45%, hsl(43 96% 56%) 100%)',
+                    backgroundSize: '100% 200%',
+                    WebkitTextStroke: '1px hsl(43 96% 56% / 0.4)',
+                    textShadow:
+                      '0 1px 0 hsl(43 70% 40%), 0 2px 0 hsl(43 70% 32%), 0 3px 0 hsl(220 60% 25%), 0 5px 0 hsl(220 60% 18%), 0 8px 22px rgba(0,0,0,0.6)',
                   }}
                 >
                   Khandoker
