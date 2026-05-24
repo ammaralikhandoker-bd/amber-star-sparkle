@@ -148,10 +148,9 @@ const AIChatbot = () => {
             }}
             aria-label="Open AI Chat"
           >
-            <Sparkles className="w-5 h-5 text-white" />
-            {/* Double pulse rings */}
-            <span className="absolute inset-0 rounded-full animate-ping opacity-25" style={{ background: 'linear-gradient(135deg, hsl(244 80% 69%), hsl(190 100% 50%))', animationDuration: '2.5s' }} />
-            <span className="absolute -inset-1 rounded-full animate-ping opacity-15" style={{ background: 'linear-gradient(135deg, hsl(244 80% 69%), hsl(190 100% 50%))', animationDuration: '2.5s', animationDelay: '0.5s' }} />
+            {/* Pulse ring behind icon */}
+            <span className="absolute inset-0 rounded-full animate-ping opacity-20 -z-10" style={{ background: 'linear-gradient(135deg, hsl(244 80% 69%), hsl(190 100% 50%))', animationDuration: '2.5s' }} />
+            <Sparkles className="relative z-10 w-5 h-5 text-white" />
             {/* Tooltip */}
             <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 px-2.5 py-1 rounded-lg bg-white/90 backdrop-blur-sm text-[10px] font-semibold text-gray-800 shadow-lg opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-300 whitespace-nowrap pointer-events-none">
               AI Assistant
