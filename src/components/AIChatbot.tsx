@@ -138,14 +138,24 @@ const AIChatbot = () => {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.15, rotate: -5 }}
+            whileTap={{ scale: 0.95 }}
             onClick={() => setOpen(true)}
-            className="fixed bottom-24 right-6 z-50 w-14 h-14 rounded-full shadow-lg flex items-center justify-center"
-            style={{ background: 'var(--gradient-primary)', boxShadow: 'var(--glow-indigo)' }}
+            className="fixed bottom-20 right-6 z-50 w-11 h-11 rounded-full shadow-xl ring-2 ring-white/20 backdrop-blur-md flex items-center justify-center group"
+            style={{
+              background: 'linear-gradient(135deg, hsl(244 80% 69%), hsl(190 100% 50%))',
+              boxShadow: '0 4px 20px hsl(244 80% 69% / 0.45), 0 0 0 4px hsl(244 80% 69% / 0.15)',
+            }}
             aria-label="Open AI Chat"
           >
-            <Sparkles className="w-6 h-6 text-white" />
+            <Sparkles className="w-5 h-5 text-white" />
+            {/* Double pulse rings */}
+            <span className="absolute inset-0 rounded-full animate-ping opacity-25" style={{ background: 'linear-gradient(135deg, hsl(244 80% 69%), hsl(190 100% 50%))', animationDuration: '2.5s' }} />
+            <span className="absolute -inset-1 rounded-full animate-ping opacity-15" style={{ background: 'linear-gradient(135deg, hsl(244 80% 69%), hsl(190 100% 50%))', animationDuration: '2.5s', animationDelay: '0.5s' }} />
+            {/* Tooltip */}
+            <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 px-2.5 py-1 rounded-lg bg-white/90 backdrop-blur-sm text-[10px] font-semibold text-gray-800 shadow-lg opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-300 whitespace-nowrap pointer-events-none">
+              AI Assistant
+            </span>
           </motion.button>
         )}
       </AnimatePresence>
