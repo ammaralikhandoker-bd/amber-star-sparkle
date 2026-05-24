@@ -68,17 +68,33 @@ const HeroSection = () => {
 
             <motion.h1
               variants={itemVariants}
-              className="font-display text-4xl md:text-5xl lg:text-[3.75rem] font-extrabold leading-[1.05] mb-4 text-foreground"
+              className="font-display mb-4 flex flex-col items-center lg:items-start gap-1"
             >
-              MD. Amber Ali{' '}
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  backgroundImage:
-                    'linear-gradient(90deg, hsl(244 80% 69%), hsl(220 80% 65%), hsl(190 100% 55%), hsl(180 95% 50%))',
-                }}
-              >
-                Khandoker
+              <span className="text-lg md:text-2xl font-extralight tracking-[0.35em] uppercase text-[hsl(43_96%_62%)]/90">
+                Md. Amber Ali
+              </span>
+              <span className="relative inline-block leading-none">
+                <span
+                  aria-hidden
+                  className="absolute -top-1 -left-1 text-6xl md:text-7xl lg:text-8xl font-extrabold italic tracking-tight select-none pointer-events-none opacity-30"
+                  style={{
+                    WebkitTextStroke: '1px hsl(43 96% 56% / 0.55)',
+                    WebkitTextFillColor: 'transparent',
+                  }}
+                >
+                  Khandoker
+                </span>
+                <span
+                  className="relative text-6xl md:text-7xl lg:text-8xl font-extrabold italic tracking-tight bg-clip-text text-transparent animate-name-shimmer drop-shadow-[0_10px_18px_rgba(0,0,0,0.45)]"
+                  style={{
+                    backgroundImage:
+                      'linear-gradient(90deg, hsl(220 90% 65%), hsl(0 0% 100%), hsl(43 96% 60%), hsl(220 90% 65%))',
+                    backgroundSize: '200% auto',
+                  }}
+                >
+                  Khandoker
+                </span>
+                <Sparkles className="absolute -top-3 -right-6 w-4 h-4 text-[hsl(43_96%_62%)] animate-pulse" />
               </span>
             </motion.h1>
 
