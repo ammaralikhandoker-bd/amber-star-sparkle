@@ -4,7 +4,7 @@ import { X, Briefcase, TrendingUp, FileSpreadsheet, Star, BadgeCheck } from 'luc
 import sproutPerf from '@/assets/proof-sproutgigs-performance.jpg';
 import sproutSuccess from '@/assets/proof-sproutgigs-success.jpg';
 import stepStock from '@/assets/proof-stepmedia-stock.jpg';
-import rflProd from '@/assets/proof-rfl-production.jpg';
+import rflAttendance from '@/assets/proof-rfl-attendance.jpg';
 import rflHr from '@/assets/proof-rfl-hr.jpg';
 
 type Proof = {
@@ -42,12 +42,12 @@ const proofs: Proof[] = [
     highlights: ['Daily stock register for full board catalog', 'Multi-variant SKU tracking (MDF, Veneer, Melamine)', 'Date-wise add/issue ledger'],
   },
   {
-    title: 'PRAN-RFL — Daily Production Report',
-    client: 'PRAN-RFL Group',
-    tag: 'Production · Excel',
+    title: 'PRAN-RFL — Daily Attendance Report',
+    client: 'PRAN-RFL Group · DIP THA',
+    tag: 'Attendance · Excel',
     icon: FileSpreadsheet,
-    img: rflProd,
-    highlights: ['Day & night shift production tracking', 'FG, Depot & WIP reconciliation', 'Item-wise rate × quantity automation'],
+    img: rflAttendance,
+    highlights: ['Daily Present / Absent / Day-Off / Leave tracking', 'Department, section & shift-wise breakdown', 'Male/Female manpower summary (203 staff)', 'Multi-sheet: Total MP, Outgoing, Daily Basis Summary'],
   },
   {
     title: 'PRAN-RFL — HR Confirmation Justify Sheet',
