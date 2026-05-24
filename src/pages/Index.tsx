@@ -8,7 +8,7 @@ import ScrollProgress from '@/components/ScrollProgress';
 const SocialProofSection = lazy(() => import('@/components/SocialProofSection'));
 const StatsSection = lazy(() => import('@/components/StatsSection'));
 const AboutSection = lazy(() => import('@/components/AboutSection'));
-const GallerySection = lazy(() => import('@/components/GallerySection'));
+
 const ExperienceSection = lazy(() => import('@/components/ExperienceSection'));
 const CertificatesSection = lazy(() => import('@/components/CertificatesSection'));
 const SkillsSection = lazy(() => import('@/components/SkillsSection'));
@@ -59,7 +59,7 @@ const Index = () => {
         <LazySection><SocialProofSection /></LazySection>
         <LazySection><StatsSection /></LazySection>
         <LazySection><AboutSection /></LazySection>
-        <LazySection><GallerySection /></LazySection>
+        
         <LazySection><ExperienceSection /></LazySection>
         <LazySection><CertificatesSection /></LazySection>
         <LazySection><SkillsSection /></LazySection>
