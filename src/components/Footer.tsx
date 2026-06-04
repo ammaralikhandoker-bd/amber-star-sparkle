@@ -71,7 +71,7 @@ const Footer = () => {
 
         <div className="text-center pt-6 border-t border-border/40">
           <p className="text-muted-foreground text-xs">
-            © {new Date().getFullYear()} MD. Amber Ali Khandoker. All Rights Reserved.
+            © {new Date().getFullYear()} MD. Amber Khandoker. All Rights Reserved.
           </p>
         </div>
       </div>
