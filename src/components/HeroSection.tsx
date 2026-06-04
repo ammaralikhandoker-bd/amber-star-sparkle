@@ -215,7 +215,7 @@ const HeroSection = () => {
                   className="border-primary/40 text-primary hover:bg-primary/10 hover:text-primary font-display font-semibold tracking-wide backdrop-blur-sm"
                   aria-label="Download CV"
                 >
-                  <a href="/cv.pdf" download="CV of Md. Amber Ali Khandoker.pdf">
+                  <a href="/cv.pdf" download="CV of Md. Amber Khandoker.pdf">
                     <Download className="mr-2 h-5 w-5" />
                     Download CV
                   </a>
@@ -258,7 +258,7 @@ const HeroSection = () => {
                 <div className="w-full h-full rounded-full overflow-hidden bg-card">
                   <img
                     src={profileImage}
-                    alt="MD. Amber Ali Khandoker — HR Specialist & Digital Professional"
+                    alt="MD. Amber Khandoker — HR Specialist & Digital Professional"
                     className="w-full h-full object-cover object-[center_15%] scale-[1.05]"
                     loading="eager"
                     width={384}
