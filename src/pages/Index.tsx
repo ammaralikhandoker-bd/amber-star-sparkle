@@ -21,8 +21,7 @@ const InsightsSection = lazy(() => import('@/components/InsightsSection'));
 const ContactSection = lazy(() => import('@/components/ContactSection'));
 const Footer = lazy(() => import('@/components/Footer'));
 
-const WhatsAppWidget = lazy(() => import('@/components/WhatsAppWidget'));
-const AIChatbot = lazy(() => import('@/components/AIChatbot'));
+const FloatingActions = lazy(() => import('@/components/FloatingActions'));
 
 const SectionSkeleton = () => (
   <div className="py-20 px-4" aria-hidden="true">
