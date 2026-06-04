@@ -68,46 +68,52 @@ const HeroSection = () => {
 
             <motion.h1
               variants={itemVariants}
-              className="font-display mb-4 flex flex-col items-center lg:items-start gap-2"
+              className="font-display mb-4 flex flex-col items-center lg:items-start gap-1"
             >
-              {/* MD. Amber Ali — 3D bold */}
+              {/* Kicker */}
+              <span
+                className="text-[10px] md:text-xs font-semibold tracking-[0.35em] uppercase"
+                style={{ color: 'hsl(43 96% 65%)' }}
+              >
+                — Hello, I am
+              </span>
+
+              {/* MD. Amber — refined metallic */}
               <span className="relative inline-block leading-[0.95]">
                 <span
                   aria-hidden
-                  className="absolute inset-0 text-4xl md:text-6xl lg:text-7xl font-black tracking-tight select-none pointer-events-none"
+                  className="absolute inset-0 text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight select-none pointer-events-none"
                   style={{
-                    color: 'hsl(43 96% 50%)',
-                    transform: 'translate(4px, 5px)',
-                    filter: 'blur(0.5px)',
-                    opacity: 0.45,
+                    color: 'hsl(43 96% 55%)',
+                    transform: 'translate(2px, 3px)',
+                    filter: 'blur(6px)',
+                    opacity: 0.55,
                   }}
                 >
                   MD. Amber
                 </span>
                 <span
-                  className="relative text-4xl md:text-6xl lg:text-7xl font-black tracking-tight bg-clip-text text-transparent"
+                  className="relative text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight bg-clip-text text-transparent"
                   style={{
                     backgroundImage:
-                      'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 92%) 45%, hsl(220 30% 70%) 100%)',
-                    WebkitTextStroke: '1px hsl(220 60% 30% / 0.4)',
-                    textShadow:
-                      '0 1px 0 hsl(220 40% 80%), 0 2px 0 hsl(220 40% 70%), 0 3px 0 hsl(220 40% 60%), 0 4px 0 hsl(220 40% 50%), 0 6px 14px rgba(0,0,0,0.55)',
+                      'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 95%) 50%, hsl(220 25% 75%) 100%)',
+                    textShadow: '0 2px 18px hsl(220 80% 50% / 0.25)',
                   }}
                 >
                   MD. Amber
                 </span>
               </span>
 
-              {/* Khandoker — 3D bold gradient */}
-              <span className="relative inline-block leading-[0.95]">
+              {/* Khandoker — elegant gradient signature */}
+              <span className="relative inline-block leading-[0.95] mt-1">
                 <span
                   aria-hidden
                   className="absolute inset-0 text-5xl md:text-7xl lg:text-8xl font-black italic tracking-tight select-none pointer-events-none"
                   style={{
-                    color: 'hsl(220 90% 35%)',
-                    transform: 'translate(5px, 6px)',
-                    filter: 'blur(0.5px)',
-                    opacity: 0.55,
+                    color: 'hsl(195 100% 55%)',
+                    transform: 'translate(3px, 4px)',
+                    filter: 'blur(10px)',
+                    opacity: 0.5,
                   }}
                 >
                   Khandoker
@@ -116,18 +122,26 @@ const HeroSection = () => {
                   className="relative text-5xl md:text-7xl lg:text-8xl font-black italic tracking-tight bg-clip-text text-transparent animate-name-shimmer"
                   style={{
                     backgroundImage:
-                      'linear-gradient(180deg, hsl(220 95% 78%) 0%, hsl(195 100% 60%) 45%, hsl(43 96% 56%) 100%)',
-                    backgroundSize: '100% 200%',
-                    WebkitTextStroke: '1px hsl(43 96% 56% / 0.4)',
-                    textShadow:
-                      '0 1px 0 hsl(43 70% 40%), 0 2px 0 hsl(43 70% 32%), 0 3px 0 hsl(220 60% 25%), 0 5px 0 hsl(220 60% 18%), 0 8px 22px rgba(0,0,0,0.6)',
+                      'linear-gradient(110deg, hsl(220 95% 80%) 0%, hsl(195 100% 65%) 35%, hsl(43 96% 62%) 70%, hsl(220 95% 80%) 100%)',
+                    backgroundSize: '200% 100%',
                   }}
                 >
                   Khandoker
                 </span>
+                {/* underline accent */}
+                <span
+                  aria-hidden
+                  className="absolute -bottom-1 left-0 h-[3px] w-full rounded-full"
+                  style={{
+                    background:
+                      'linear-gradient(90deg, transparent 0%, hsl(43 96% 56%) 30%, hsl(195 100% 60%) 70%, transparent 100%)',
+                    opacity: 0.8,
+                  }}
+                />
                 <Sparkles className="absolute -top-3 -right-6 w-4 h-4 text-[hsl(43_96%_62%)] animate-pulse" />
               </span>
             </motion.h1>
+
 
             {/* Govt Verified badge */}
             <motion.div variants={itemVariants} className="mb-4 flex flex-wrap gap-2 justify-center lg:justify-start">
