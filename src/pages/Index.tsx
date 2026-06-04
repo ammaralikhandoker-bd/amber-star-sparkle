@@ -72,12 +72,7 @@ const Index = () => {
       </main>
       <Suspense fallback={null}>
         <Footer />
-        {showWidgets && (
-          <>
-            <WhatsAppWidget />
-            <AIChatbot />
-          </>
-        )}
+        {showWidgets && <FloatingActions />}
       </Suspense>
     </div>
   );
