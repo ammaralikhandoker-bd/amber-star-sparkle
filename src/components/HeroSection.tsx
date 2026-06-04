@@ -82,7 +82,7 @@ const HeroSection = () => {
               <span className="relative inline-block leading-[0.95]">
                 <span
                   aria-hidden
-                  className="absolute inset-0 text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight select-none pointer-events-none"
+                  className="absolute inset-0 text-[2rem] md:text-6xl lg:text-7xl font-extrabold tracking-tight select-none pointer-events-none"
                   style={{
                     color: 'hsl(43 96% 55%)',
                     transform: 'translate(2px, 3px)',
@@ -93,7 +93,7 @@ const HeroSection = () => {
                   MD. Amber
                 </span>
                 <span
-                  className="relative text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight bg-clip-text text-transparent"
+                  className="relative text-[2rem] md:text-6xl lg:text-7xl font-extrabold tracking-tight bg-clip-text text-transparent"
                   style={{
                     backgroundImage:
                       'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 95%) 50%, hsl(220 25% 75%) 100%)',
@@ -108,7 +108,7 @@ const HeroSection = () => {
               <span className="relative inline-block leading-[0.95] mt-1">
                 <span
                   aria-hidden
-                  className="absolute inset-0 text-5xl md:text-7xl lg:text-8xl font-black italic tracking-tight select-none pointer-events-none"
+                  className="absolute inset-0 text-[2.5rem] md:text-7xl lg:text-8xl font-black italic tracking-tight select-none pointer-events-none"
                   style={{
                     color: 'hsl(195 100% 55%)',
                     transform: 'translate(3px, 4px)',
@@ -119,7 +119,7 @@ const HeroSection = () => {
                   Khandoker
                 </span>
                 <span
-                  className="relative text-5xl md:text-7xl lg:text-8xl font-black italic tracking-tight bg-clip-text text-transparent animate-name-shimmer"
+                  className="relative text-[2.5rem] md:text-7xl lg:text-8xl font-black italic tracking-tight bg-clip-text text-transparent animate-name-shimmer"
                   style={{
                     backgroundImage:
                       'linear-gradient(110deg, hsl(220 95% 80%) 0%, hsl(195 100% 65%) 35%, hsl(43 96% 62%) 70%, hsl(220 95% 80%) 100%)',
