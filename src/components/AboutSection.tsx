@@ -305,7 +305,7 @@ const AboutSection = () => {
                 className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 blur-2xl"
               />
               <div className="relative w-72 h-80 md:w-80 md:h-96 rounded-2xl overflow-hidden ring-glow-indigo">
-                <img src={aboutPhoto} alt="MD. Amber Ali Khandoker" className="w-full h-full object-cover" loading="lazy" width={320} height={384} decoding="async" />
+                <img src={aboutPhoto} alt="MD. Amber Khandoker" className="w-full h-full object-cover" loading="lazy" width={320} height={384} decoding="async" />
               </div>
             </motion.div>
           </motion.div>
