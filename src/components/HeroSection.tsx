@@ -105,10 +105,10 @@ const HeroSection = () => {
               </span>
 
               {/* Khandoker — elegant gradient signature */}
-              <span className="relative inline-block leading-[0.95] mt-1">
+              <span className="relative inline-block leading-[1.05] mt-1 pr-[0.35em]">
                 <span
                   aria-hidden
-                  className="absolute inset-0 text-[2.25rem] md:text-7xl lg:text-8xl font-black italic tracking-tight select-none pointer-events-none"
+                  className="absolute inset-0 text-[2.25rem] md:text-6xl lg:text-7xl font-black italic tracking-tight select-none pointer-events-none"
                   style={{
                     color: 'hsl(195 100% 55%)',
                     transform: 'translate(3px, 4px)',
@@ -119,7 +119,7 @@ const HeroSection = () => {
                   Khandoker
                 </span>
                 <span
-                  className="relative text-[2.25rem] md:text-7xl lg:text-8xl font-black italic tracking-tight bg-clip-text text-transparent animate-name-shimmer"
+                  className="relative text-[2.25rem] md:text-6xl lg:text-7xl font-black italic tracking-tight bg-clip-text text-transparent animate-name-shimmer"
                   style={{
                     backgroundImage:
                       'linear-gradient(110deg, hsl(220 95% 80%) 0%, hsl(195 100% 65%) 35%, hsl(43 96% 62%) 70%, hsl(220 95% 80%) 100%)',
@@ -131,14 +131,14 @@ const HeroSection = () => {
                 {/* underline accent */}
                 <span
                   aria-hidden
-                  className="absolute -bottom-1 left-0 h-[3px] w-full rounded-full"
+                  className="absolute -bottom-0 left-0 right-[0.35em] h-[3px] rounded-full"
                   style={{
                     background:
                       'linear-gradient(90deg, transparent 0%, hsl(43 96% 56%) 30%, hsl(195 100% 60%) 70%, transparent 100%)',
                     opacity: 0.8,
                   }}
                 />
-                <Sparkles className="absolute -top-3 -right-6 w-4 h-4 text-[hsl(43_96%_62%)] animate-pulse" />
+                <Sparkles className="absolute -top-2 right-0 w-5 h-5 text-[hsl(43_96%_62%)] animate-pulse" />
               </span>
             </motion.h1>
 
