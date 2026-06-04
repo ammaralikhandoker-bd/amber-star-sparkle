@@ -82,7 +82,7 @@ const HeroSection = () => {
                     opacity: 0.45,
                   }}
                 >
-                  MD. Amber Ali
+                  MD. Amber
                 </span>
                 <span
                   className="relative text-4xl md:text-6xl lg:text-7xl font-black tracking-tight bg-clip-text text-transparent"
@@ -94,7 +94,7 @@ const HeroSection = () => {
                       '0 1px 0 hsl(220 40% 80%), 0 2px 0 hsl(220 40% 70%), 0 3px 0 hsl(220 40% 60%), 0 4px 0 hsl(220 40% 50%), 0 6px 14px rgba(0,0,0,0.55)',
                   }}
                 >
-                  MD. Amber Ali
+                  MD. Amber
                 </span>
               </span>
 
