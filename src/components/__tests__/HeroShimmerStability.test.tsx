@@ -83,7 +83,7 @@ describe("HeroSection shimmer — temporal stability", () => {
     // Catches off-by-one errors, rounding glitches, or discontinuities
     // that a 50ms stride might miss.
     let prev = shimmerPosAt(0);
-    for (let t = 25; t <= DURATION_MS; t += 25) {
+    for (let t = 25; t < DURATION_MS; t += 25) {
       const v = shimmerPosAt(t);
       expect(Number.isFinite(v)).toBe(true);
       expect(v).toBeGreaterThanOrEqual(START_PCT);
@@ -92,7 +92,7 @@ describe("HeroSection shimmer — temporal stability", () => {
       expect(v).toBeGreaterThanOrEqual(prev);
       prev = v;
     }
-    // After a full cycle we should be back at the start value
+    // After a full cycle we should be back at the start value (seamless wrap)
     expect(shimmerPosAt(DURATION_MS)).toBeCloseTo(shimmerPosAt(0), 9);
   });
 
