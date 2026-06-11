@@ -68,7 +68,7 @@ describe("HeroSection shimmer — temporal stability", () => {
     expect(Math.abs(t1 - t0)).toBeGreaterThan((END_PCT - START_PCT) * 0.2);
   });
 
-  it("stays inside the declared keyframe range at every sample", () => {
+  it("stays inside the declared keyframe range at every 50ms sample (12s)", () => {
     // Dense sampling across two full loops (every 50ms for 12s)
     for (let t = 0; t <= 12000; t += 50) {
       const v = shimmerPosAt(t);
@@ -76,6 +76,24 @@ describe("HeroSection shimmer — temporal stability", () => {
       expect(v).toBeGreaterThanOrEqual(START_PCT);
       expect(v).toBeLessThanOrEqual(END_PCT);
     }
+  });
+
+  it("samples every 25ms across one full 6s cycle to catch rare timing glitches", () => {
+    // Finer-grained sampling: 240 samples in a single cycle.
+    // Catches off-by-one errors, rounding glitches, or discontinuities
+    // that a 50ms stride might miss.
+    let prev = shimmerPosAt(0);
+    for (let t = 25; t < DURATION_MS; t += 25) {
+      const v = shimmerPosAt(t);
+      expect(Number.isFinite(v)).toBe(true);
+      expect(v).toBeGreaterThanOrEqual(START_PCT);
+      expect(v).toBeLessThanOrEqual(END_PCT);
+      // Monotonic within a cycle (linear, no backtracking)
+      expect(v).toBeGreaterThanOrEqual(prev);
+      prev = v;
+    }
+    // After a full cycle we should be back at the start value (seamless wrap)
+    expect(shimmerPosAt(DURATION_MS)).toBeCloseTo(shimmerPosAt(0), 9);
   });
 
   it("wraps continuously at the 6s loop seam (no visual jump mid-cycle)", () => {
