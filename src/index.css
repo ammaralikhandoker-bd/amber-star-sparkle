@@ -162,6 +162,12 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
+
+  /* Explicitly freeze the name-shimmer gradient at a visible static position */
+  .animate-name-shimmer {
+    animation: none !important;
+    background-position: center !important;
+  }
 }
 
 /* Scrollbar styling */
