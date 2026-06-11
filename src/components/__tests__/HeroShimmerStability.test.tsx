@@ -131,7 +131,7 @@ describe("HeroSection shimmer — sparkle non-overlap (structural)", () => {
 
   it("reserves a right-padding gutter on the cluster for the sparkle", () => {
     // pr-[0.35em] keeps glyphs out of the icon's column.
-    expect(cluster.className).toMatch(/\bpr-\[0\.35em\]\b/);
+    expect(cluster.className).toContain("pr-[0.35em]");
   });
 
   it("anchors the sparkle inside that gutter (right-0, absolute)", () => {
