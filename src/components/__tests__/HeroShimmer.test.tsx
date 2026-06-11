@@ -1,100 +1,94 @@
 /**
  * Visual regression — Hero "Khandoker" shimmer gradient.
  *
- * Note: jsdom does not paint pixels, so true screenshot diffing requires
- * Playwright. This suite catches the practical regressions that have
- * historically broken the hero shimmer:
- *   1. The animated class is removed or renamed.
- *   2. The gradient stops / direction / size change unexpectedly.
- *   3. The blurred shadow layer or sparkle accent is removed.
- *   4. The keyframes definition in index.css drifts.
+ * jsdom does not paint pixels, so true screenshot diffs require Playwright.
+ * This suite locks the *style-critical surface* that has historically broken
+ * the hero shimmer:
+ *   1. Animated class / structural cluster (snapshot of outerHTML).
+ *   2. Gradient definition in HeroSection.tsx source (regex).
+ *   3. Keyframes + reduced-motion override in index.css (regex).
  *
- * Snapshots are committed; any intentional design change must be reviewed
- * and accepted via `vitest -u`.
+ * Note: jsdom silently drops inline `hsl(H S% L%)` (space-syntax) values, so
+ * we lock those by asserting against the TSX source instead of the rendered
+ * style object. Any intentional design change requires updating the snapshot
+ * (`vitest -u`) and the regex constants — a deliberate, reviewable action.
  */
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import { render } from "@testing-library/react";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
-import HeroSection from "../HeroSection";
 
-// Stub framer-motion so jsdom doesn't need IntersectionObserver / rAF timing
 vi.mock("framer-motion", async () => {
   const React = await import("react");
   const passthrough = (tag: string) =>
     React.forwardRef((props: any, ref: any) =>
       React.createElement(tag, { ...props, ref })
     );
-  const motion = new Proxy(
-    {},
-    { get: (_t, key: string) => passthrough(key) }
-  );
   return {
-    motion,
+    motion: new Proxy({}, { get: (_t, k: string) => passthrough(k as string) }),
     AnimatePresence: ({ children }: any) => children,
     useReducedMotion: () => false,
   };
 });
-
-// Stub the chatbot — irrelevant to this test and pulls heavy deps
 vi.mock("../AIChatbot", () => ({ default: () => null }));
+
+import HeroSection from "../HeroSection";
+
+const heroSource = readFileSync(
+  resolve(__dirname, "../HeroSection.tsx"),
+  "utf8"
+);
+const cssSource = readFileSync(
+  resolve(__dirname, "../../index.css"),
+  "utf8"
+);
 
 describe("HeroSection shimmer — visual regression", () => {
   const { container } = render(<HeroSection />);
-
   const shimmer = container.querySelector(
     ".animate-name-shimmer"
   ) as HTMLElement | null;
+  const cluster = shimmer?.parentElement as HTMLElement | undefined;
 
   it("renders the shimmer span with the Khandoker label", () => {
     expect(shimmer).not.toBeNull();
     expect(shimmer!.textContent?.trim()).toBe("Khandoker");
   });
 
-  it("locks the shimmer gradient definition (snapshot)", () => {
-    // We snapshot only the style-critical surface so unrelated tweaks
-    // (copy edits, surrounding layout) don't churn the snapshot.
-    const snapshot = {
-      className: shimmer!.className,
-      backgroundImage: shimmer!.style.backgroundImage,
-      backgroundSize: shimmer!.style.backgroundSize,
-    };
-    expect(snapshot).toMatchInlineSnapshot(`
-      {
-        "backgroundImage": "linear-gradient(110deg, hsl(220 95% 80%) 0%, hsl(195 100% 65%) 35%, hsl(43 96% 62%) 70%, hsl(220 95% 80%) 100%)",
-        "backgroundSize": "200% 100%",
-        "className": "relative text-[2.25rem] md:text-6xl lg:text-7xl font-black italic tracking-tight bg-clip-text text-transparent animate-name-shimmer",
-      }
-    `);
+  it("locks the shimmer cluster structure (snapshot)", () => {
+    // Captures: the animated span, blurred glow layer, underline accent,
+    // and the Sparkles icon — all the pieces that make the shimmer "look right".
+    expect(cluster!.outerHTML).toMatchSnapshot();
   });
 
-  it("preserves the blurred glow layer behind the name", () => {
-    const glow = container.querySelector(
-      'span[aria-hidden][class*="italic"]'
-    ) as HTMLElement | null;
-    expect(glow).not.toBeNull();
-    expect(glow!.style.filter).toBe("blur(10px)");
-    expect(glow!.style.color).toBe("hsl(195 100% 55%)");
-  });
-
-  it("keeps the Sparkles accent in the shimmer cluster", () => {
-    // lucide-react renders an <svg class="lucide-sparkles ...">
-    const sparkle = container.querySelector('svg[class*="sparkle"]');
-    expect(sparkle).not.toBeNull();
-  });
-
-  it("keeps the @keyframes name-shimmer definition in index.css", () => {
-    const css = readFileSync(
-      resolve(__dirname, "../../index.css"),
-      "utf8"
+  it("locks the shimmer gradient definition in HeroSection.tsx", () => {
+    // Source-level lock because jsdom strips modern hsl() inline styles.
+    expect(heroSource).toContain("animate-name-shimmer");
+    expect(heroSource).toContain(
+      "linear-gradient(110deg, hsl(220 95% 80%) 0%, hsl(195 100% 65%) 35%, hsl(43 96% 62%) 70%, hsl(220 95% 80%) 100%)"
     );
-    expect(css).toMatch(/@keyframes\s+name-shimmer\s*{[^}]*-200%[^}]*200%/);
-    expect(css).toMatch(
+    expect(heroSource).toMatch(/backgroundSize:\s*['"]200% 100%['"]/);
+  });
+
+  it("locks the blurred glow layer behind the name", () => {
+    expect(heroSource).toContain("color: 'hsl(195 100% 55%)'");
+    expect(heroSource).toContain("filter: 'blur(10px)'");
+  });
+
+  it("keeps the @keyframes name-shimmer + reduced-motion override in index.css", () => {
+    expect(cssSource).toMatch(/@keyframes\s+name-shimmer\b/);
+    expect(cssSource).toMatch(/background-position:\s*-200%\s+center/);
+    expect(cssSource).toMatch(/background-position:\s*200%\s+center/);
+    expect(cssSource).toMatch(
       /\.animate-name-shimmer\s*{\s*animation:\s*name-shimmer\s+6s\s+linear\s+infinite/
     );
-    // Reduced-motion override must freeze the animation.
-    expect(css).toMatch(
-      /prefers-reduced-motion[\s\S]*\.animate-name-shimmer\s*{\s*animation:\s*none\s*!important/
+    // Reduced-motion must freeze the shimmer
+    const reducedBlock = cssSource.match(
+      /@media \(prefers-reduced-motion: reduce\)[\s\S]*$/
+    )?.[0];
+    expect(reducedBlock).toBeTruthy();
+    expect(reducedBlock!).toMatch(
+      /\.animate-name-shimmer\s*{\s*animation:\s*none\s*!important/
     );
   });
 });
