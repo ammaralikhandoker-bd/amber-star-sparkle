@@ -1,4 +1,5 @@
 import { lazy, Suspense, useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import NetworkBackground from '@/components/NetworkBackground';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
