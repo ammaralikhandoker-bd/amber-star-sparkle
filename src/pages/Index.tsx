@@ -1,4 +1,5 @@
 import { lazy, Suspense, useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import NetworkBackground from '@/components/NetworkBackground';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
@@ -50,6 +51,14 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>MD. Ammar Ali Khandoker — HR & Digital Marketing Expert BD</title>
+        <meta name="description" content="Govt. Verified Freelancer (ICT Division, BD). 5+ years in HR, HRIS/ERP, Data Entry, Digital PR, SEO & AI workflows. Dhaka." />
+        <link rel="canonical" href="https://amber.pro.bd/" />
+        <meta property="og:title" content="MD. Ammar Ali Khandoker — HR & Digital Marketing Expert BD" />
+        <meta property="og:description" content="Govt. Verified Freelancer (ICT Division, BD). HR, Data Entry, Digital PR, SEO & AI workflows. Dhaka." />
+        <meta property="og:url" content="https://amber.pro.bd/" />
+      </Helmet>
       <ScrollProgress />
       <NetworkBackground />
       <Navbar />
