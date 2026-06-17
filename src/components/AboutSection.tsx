@@ -3,6 +3,8 @@ import { Mail, Phone, MapPin, GraduationCap, Send, PhoneCall, Navigation, BookOp
 import { useState } from 'react';
 import { toast } from 'sonner';
 import aboutPhoto from '@/assets/about-photo.jpg';
+import passportPhoto from '@/assets/amber-passport.jpg.asset.json';
+import signatureImg from '@/assets/amber-signature.jpg.asset.json';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -304,8 +306,8 @@ const AboutSection = () => {
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
                 className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 blur-2xl"
               />
-              <div className="relative w-72 h-80 md:w-80 md:h-96 rounded-2xl overflow-hidden ring-glow-indigo">
-                <img src={aboutPhoto} alt="MD. Amber Khandoker" className="w-full h-full object-cover" loading="lazy" width={320} height={384} decoding="async" />
+              <div className="relative w-72 h-80 md:w-80 md:h-96 rounded-2xl overflow-hidden ring-glow-indigo bg-card">
+                <img src={passportPhoto.url} alt="MD. Amber Ali Khandoker — official passport portrait" className="w-full h-full object-cover" loading="lazy" width={320} height={384} decoding="async" />
               </div>
             </motion.div>
           </motion.div>
@@ -347,6 +349,19 @@ const AboutSection = () => {
                 </motion.li>
               ))}
             </ul>
+
+            <div className="mt-6 flex items-center gap-4">
+              <div className="flex flex-col">
+                <img
+                  src={signatureImg.url}
+                  alt="Signature of MD. Amber Ali Khandoker"
+                  className="h-14 w-auto object-contain invert opacity-90"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span className="mt-1 text-xs text-muted-foreground font-medium">— MD. Amber Ali Khandoker</span>
+              </div>
+            </div>
           </motion.div>
         </div>
 
