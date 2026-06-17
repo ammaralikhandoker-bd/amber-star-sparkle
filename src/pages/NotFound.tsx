@@ -14,8 +14,8 @@ const NotFound = () => {
   return (
     <div className="flex min-h-screen items-center justify-center bg-muted">
       <Helmet>
-        <title>Page Not Found (404) — MD. Ammar Ali Khandoker</title>
-        <meta name="description" content="The page you're looking for doesn't exist. Return to the homepage of MD. Ammar Ali Khandoker's portfolio." />
+        <title>Page Not Found (404) — MD. Amber Ali Khandoker</title>
+        <meta name="description" content="The page you're looking for doesn't exist. Return to the homepage of MD. Amber Ali Khandoker's portfolio." />
         <meta name="robots" content="noindex, follow" />
         <link rel="canonical" href={url} />
         <meta property="og:title" content="Page Not Found (404)" />
