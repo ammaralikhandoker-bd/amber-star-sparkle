@@ -68,6 +68,7 @@ const HeroSection = () => {
 
             <motion.h1
               variants={itemVariants}
+              aria-label="MD. Ammar Ali Khandoker — HR & Digital Marketing Expert"
               className="font-display mb-4 flex flex-col items-center lg:items-start gap-1"
             >
               {/* Kicker */}
