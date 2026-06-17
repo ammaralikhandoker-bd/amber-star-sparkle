@@ -230,7 +230,7 @@ const HeroSection = () => {
                   className="border-primary/40 text-primary hover:bg-primary/10 hover:text-primary font-display font-semibold tracking-wide backdrop-blur-sm"
                   aria-label="Download CV"
                 >
-                  <a href="/cv.pdf" download="CV of Md. Amber Khandoker.pdf">
+                  <a href="/cv.pdf" download="CV of Md. Ammar Ali Khandoker.pdf">
                     <Download className="mr-2 h-5 w-5" />
                     Download CV
                   </a>
