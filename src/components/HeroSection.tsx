@@ -78,7 +78,7 @@ const HeroSection = () => {
                 — Hello, I am
               </span>
 
-              {/* MD. Amber — refined metallic */}
+              {/* MD. Ammar Ali — refined metallic */}
               <span className="relative inline-block leading-[0.95]">
                 <span
                   aria-hidden
@@ -90,7 +90,7 @@ const HeroSection = () => {
                     opacity: 0.55,
                   }}
                 >
-                  MD. Amber
+                  MD. Ammar Ali
                 </span>
                 <span
                   className="relative text-[2rem] md:text-6xl lg:text-7xl font-extrabold tracking-tight bg-clip-text text-transparent"
@@ -100,7 +100,7 @@ const HeroSection = () => {
                     textShadow: '0 2px 18px hsl(220 80% 50% / 0.25)',
                   }}
                 >
-                  MD. Amber
+                  MD. Ammar Ali
                 </span>
               </span>
 
