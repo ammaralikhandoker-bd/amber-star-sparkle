@@ -189,7 +189,7 @@ const GallerySection = () => {
                 alt={photo.caption}
                 loading={idx < 2 ? 'eager' : 'lazy'}
                 decoding="async"
-                {...(idx < 2 ? { fetchPriority: 'high' as const } : {})}
+                {...(idx < 2 ? ({ fetchpriority: 'high' } as any) : {})}
                 className={`absolute inset-0 w-full h-full object-cover ${photo.position} ${isMobile ? '' : 'transition-transform duration-[900ms] ease-out group-hover:scale-110'}`}
               />
 
@@ -250,7 +250,7 @@ const GallerySection = () => {
                   src={photos[activeIndex].src}
                   alt={photos[activeIndex].caption}
                   decoding="async"
-                  fetchPriority="high"
+                  {...({ fetchpriority: 'high' } as any)}
                   draggable={false}
                   className="block w-auto h-auto max-w-full max-h-[80vh] object-contain"
                 />

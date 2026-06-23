@@ -278,7 +278,7 @@ const HeroSection = () => {
                     loading="eager"
                     width={384}
                     height={384}
-                    fetchPriority="high"
+                    {...({ fetchpriority: 'high' } as any)}
                     decoding="async"
                   />
                 </div>
