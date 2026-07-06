@@ -1,150 +1,43 @@
+## Security event logging + immediate alerts
 
+### What gets logged
+A new `security_events` table records every event with type, user id, email, IP, user-agent, metadata, timestamp. Admin-only read via `user_roles` + `has_role()` (locked by RLS).
 
-# Premium "Digital PR" Portfolio Redesign
+### Events tracked
+1. **Failed login** — 5+ within 10 min for the same email triggers alert.
+2. **New device/IP sign-in** — compared against `known_devices` table (user_id + ip + ua hash); unknown → alert, then remember.
+3. **Password / email change** — always alert.
+4. **Admin role granted** — trigger on `user_roles` insert where role='admin' → alert.
 
-## Overview
-A complete redesign of your portfolio to create a premium, corporate, trust-inspiring professional profile. The current futuristic cyberpunk theme will be transformed into a clean, modern "Digital PR" style with a new color palette and restructured sections.
+### How events reach the log
+- Client calls edge function `log-security-event` after Supabase auth calls (sign-in success/failure, updateUser for password/email).
+- Server-side DB trigger for admin role grants (can't be bypassed by client).
+- Edge function evaluates threshold rules and, on match, dispatches alerts.
 
----
+### Alerts
+- **Email** — via existing `send-transactional-email` to `mdamberalikhandoker@outlook.com`. New template `security-alert.tsx` (event type, when, IP, UA, "wasn't you?" guidance).
+- **WhatsApp** — via Twilio connector to +8801716861353 using WhatsApp sandbox/Business number. **Requires connecting Twilio** — I'll prompt for it during build. If you skip Twilio, email-only still works.
 
-## 1. Color Palette and Typography Update
+### Admin dashboard
+New protected route `/admin/security` (visible only to users with `admin` role): recent events table with filters (event type, date range), plus a live "alerts fired" list. Non-admins are redirected.
 
-**New Color Palette:**
-- Background: Deep navy blue (#0A1628) with subtle gradient
-- Cards: Slightly lighter navy (#111D33)
-- Primary accent: Electric blue (#3B82F6)
-- Secondary accent: Gold (#F59E0B) for CTAs and highlights
-- Text: Crisp white (#F8FAFC) and soft gray (#94A3B8)
+### Tables / infra
+```
+security_events(id, event_type, user_id, email, ip, user_agent, metadata, created_at)
+known_devices(id, user_id, ip, ua_hash, first_seen, last_seen)
+user_roles(id, user_id, role app_role) + has_role() SECURITY DEFINER
+```
+All RLS-locked; only `service_role` writes; only admins read.
 
-**Typography:**
-- Keep Inter for body text (already in use)
-- Replace Orbitron with a more corporate font like "Plus Jakarta Sans" or "Sora" for headings
-- Update Google Fonts link in index.html
+### Files
+- migration: tables, enum, `has_role`, trigger for role-grant alerts
+- `supabase/functions/log-security-event/index.ts`
+- `supabase/functions/_shared/transactional-email-templates/security-alert.tsx` + registry entry
+- `src/pages/AdminSecurity.tsx` + route in `App.tsx`
+- Auth call sites wrapped to emit events (sign-in, sign-up, updateUser)
 
-**Files to modify:** `index.html`, `src/index.css`, `tailwind.config.ts`
+### Not included
+- Supabase-platform audit logs (not accessible from Lovable Cloud).
+- Hourly digests — you chose immediate.
 
----
-
-## 2. Hero Section Redesign
-
-- Update headline to "MD. Ammar Ali Khandoker"
-- Replace typewriter roles with: "Inventory Management | HR & ERP Specialist | AI Automation | SEO | Canva Design"
-- Change CTA buttons to "View My Work" (scrolls to skills/services) and "Let's Connect" (scrolls to contact)
-- Keep profile image with updated styling (cleaner border, subtle shadow instead of animated dots)
-
-**Files to modify:** `src/components/HeroSection.tsx`, `src/components/TypewriterText.tsx`
-
----
-
-## 3. Social Proof and Authority Section (New)
-
-Create a new `SocialProofSection.tsx` component placed below the hero:
-- "7,000+ Professional Network on LinkedIn" with a "Connect on LinkedIn" button
-- "Bangladesh Government Certified Freelancer" badge with a verified checkmark icon
-- Additional trust metrics from existing stats (62+ Certificates, 4.5+ Years Experience)
-- Sleek horizontal bar design with icons and subtle animations
-
-**Files to create:** `src/components/SocialProofSection.tsx`
-**Files to modify:** `src/pages/Index.tsx`
-
----
-
-## 4. Categorized Services/Skills Section
-
-Replace the current 4-card skills grid with 3 distinct categories in a modern grid layout:
-
-- **Operations:** Inventory Management, Store Management, HR & ERP
-- **Tech & Digital:** AI Automation, SEO, IT Support, Data Specialization
-- **Creative:** Canva Design & Content Creation
-
-Each category gets a larger card with an icon, title, description, and skill tags.
-
-**Files to modify:** `src/components/SkillsSection.tsx`
-
----
-
-## 5. Experience Timeline Update
-
-Update the timeline data to reflect the career progression narrative:
-- Start from Data Entry & IT Support
-- Move to HR
-- Currently: Inventory Management
-- Keep the existing vertical timeline design but refine styling to match new palette
-
-**Files to modify:** `src/components/ExperienceSection.tsx`
-
----
-
-## 6. Professional Insights Section (New)
-
-Create a new `InsightsSection.tsx` with a masonry grid or card slider:
-- Title: "Professional Insights & Motivation"
-- Placeholder cards for LinkedIn motivational quotes and career growth content
-- Each card has a quote icon, text, and "View on LinkedIn" link placeholder
-- Clean card design with subtle hover effects
-
-**Files to create:** `src/components/InsightsSection.tsx`
-**Files to modify:** `src/pages/Index.tsx`
-
----
-
-## 7. Contact Section Redesign
-
-- Add a minimalist contact form (Name, Email, Message fields) with a "Send Message" button
-- Keep existing email and phone buttons
-- Keep social links in the section
-
-**Files to modify:** `src/components/ContactSection.tsx`
-
----
-
-## 8. Floating WhatsApp Widget (New)
-
-Create a `WhatsAppWidget.tsx` component:
-- Fixed position bottom-right corner
-- WhatsApp icon with green background
-- Pulse animation to draw attention
-- Links to `https://wa.me/8801716861353`
-
-**Files to create:** `src/components/WhatsAppWidget.tsx`
-**Files to modify:** `src/pages/Index.tsx`
-
----
-
-## 9. Footer Update
-
-- Add social platform links (LinkedIn, Facebook, Twitter/X, GitHub, Telegram, WhatsApp)
-- Add professional email
-- Clean, minimal design
-
-**Files to modify:** `src/components/Footer.tsx`
-
----
-
-## 10. Background and Overall Polish
-
-- Replace the network particle background with a cleaner, subtle gradient or reduce particle density significantly
-- Update meta tags in index.html with new description
-- Ensure full responsiveness across all sections
-
-**Files to modify:** `src/components/NetworkBackground.tsx`, `index.html`
-
----
-
-## Technical Summary
-
-| Action | Files |
-|--------|-------|
-| Update theme/colors | `index.html`, `src/index.css`, `tailwind.config.ts` |
-| Redesign Hero | `src/components/HeroSection.tsx`, `src/components/TypewriterText.tsx` |
-| New Social Proof | `src/components/SocialProofSection.tsx` (new) |
-| Redesign Skills | `src/components/SkillsSection.tsx` |
-| Update Experience | `src/components/ExperienceSection.tsx` |
-| New Insights | `src/components/InsightsSection.tsx` (new) |
-| Redesign Contact | `src/components/ContactSection.tsx` |
-| New WhatsApp Widget | `src/components/WhatsAppWidget.tsx` (new) |
-| Update Footer | `src/components/Footer.tsx` |
-| Update Background | `src/components/NetworkBackground.tsx` |
-| Update Page Layout | `src/pages/Index.tsx` |
-| Update Stats | `src/components/StatsSection.tsx` |
-
+Confirm and I'll build it. Say "skip WhatsApp" if you'd rather ship email-only now and add Twilio later.
