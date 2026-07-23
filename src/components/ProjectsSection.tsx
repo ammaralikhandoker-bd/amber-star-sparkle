@@ -171,7 +171,7 @@ const ProjectsSection = () => {
 
                 <div className="relative z-10 flex-1">
                   <span className="inline-block text-[10px] uppercase tracking-wider font-display text-secondary mb-3">
-                    {p.category === 'hr' ? 'HR Project' : p.category === 'digital' ? 'Digital Campaign' : 'Achievement'}
+                    {p.category === 'hr' ? 'HR Project' : p.category === 'digital' ? 'Digital Campaign' : p.category === 'web' ? 'AI Web & Automation' : 'Achievement'}
                   </span>
                   <h3 className="font-display font-bold text-lg mb-2 text-foreground">{p.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-4">{p.short}</p>
@@ -224,7 +224,7 @@ const ProjectsSection = () => {
               </button>
 
               <span className="inline-block text-[10px] uppercase tracking-wider font-display text-secondary mb-2">
-                {selected.category === 'hr' ? 'HR Project' : selected.category === 'digital' ? 'Digital Campaign' : 'Achievement'}
+                {selected.category === 'hr' ? 'HR Project' : selected.category === 'digital' ? 'Digital Campaign' : selected.category === 'web' ? 'AI Web & Automation' : 'Achievement'}
               </span>
               <h3 className="font-display font-bold text-xl sm:text-2xl mb-3 text-foreground pr-8">{selected.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-5">{selected.description}</p>

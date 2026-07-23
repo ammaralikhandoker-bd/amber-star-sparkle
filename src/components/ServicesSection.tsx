@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Database, FileSpreadsheet, TrendingUp, Palette, Sparkles, Briefcase, ArrowRight } from 'lucide-react';
+import { Database, FileSpreadsheet, TrendingUp, Palette, Sparkles, Briefcase, ArrowRight, Code2, Workflow } from 'lucide-react';
 
 type Service = {
   title: string;
@@ -11,6 +11,22 @@ type Service = {
 };
 
 const services: Service[] = [
+  {
+    title: 'AI-Powered Web Development',
+    description: 'Full-stack web apps and dashboards built with an AI-first, vibe-coding workflow — ERP, admin panels, portfolios, and business tools.',
+    icon: Code2,
+    features: ['React + Supabase Apps', 'ERP & Dashboards', 'Vibe Coding Workflow'],
+    color: 'hsl(210 100% 60%)',
+    gradient: 'linear-gradient(135deg, hsl(210 100% 60%), hsl(244 80% 69%))',
+  },
+  {
+    title: 'n8n Automation & AI Agents',
+    description: 'Basic-level n8n agent workflows — connect apps, trigger AI actions, and automate repetitive HR, lead, and marketing tasks end-to-end.',
+    icon: Workflow,
+    features: ['n8n Workflows', 'AI Agents', 'App Integrations'],
+    color: 'hsl(320 80% 65%)',
+    gradient: 'linear-gradient(135deg, hsl(320 80% 65%), hsl(280 80% 65%))',
+  },
   {
     title: 'HRIS & ERP Systems',
     description: 'End-to-end Oracle ERP and HRIS operations — employee data, payroll, attendance, and HR reporting.',
@@ -44,10 +60,10 @@ const services: Service[] = [
     gradient: 'linear-gradient(135deg, hsl(45 95% 55%), hsl(30 95% 55%))',
   },
   {
-    title: 'AI Workflows & Automation',
+    title: 'AI Workflows & Prompt Engineering',
     description: 'Prompt engineering and AI agent design using ChatGPT, Gemini, and Claude — automate the busywork.',
     icon: Sparkles,
-    features: ['Prompt Engineering', 'AI Agents', 'Workflow Automation'],
+    features: ['Prompt Engineering', 'ChatGPT / Gemini / Claude', 'Workflow Automation'],
     color: 'hsl(280 80% 65%)',
     gradient: 'linear-gradient(135deg, hsl(280 80% 65%), hsl(310 80% 60%))',
   },
