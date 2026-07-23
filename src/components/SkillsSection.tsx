@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Users, Package, Sparkles, TrendingUp } from 'lucide-react';
+import { Users, Package, Sparkles, TrendingUp, Code2 } from 'lucide-react';
 
 type Skill = { name: string; level: number };
 type Accent = 'indigo' | 'gold' | 'emerald' | 'cyan';
@@ -40,10 +40,19 @@ const marketingSkills: Skill[] = [
   { name: 'WordPress & Web Design', level: 82 },
 ];
 
+const webDevSkills: Skill[] = [
+  { name: 'AI-Powered Web Development', level: 88 },
+  { name: 'Vibe Coding (AI-first workflow)', level: 90 },
+  { name: 'React + Tailwind + TypeScript', level: 82 },
+  { name: 'Supabase / Backend Basics', level: 80 },
+  { name: 'n8n Automation & AI Agents', level: 82 },
+  { name: 'API & Webhook Integrations', level: 78 },
+];
+
 const tools = [
-  'Oracle ERP', 'HRIS Software', 'MS Excel', 'MS Word', 'PowerPoint', 'Outlook',
-  'Google Workspace', 'Canva', 'Freepik', 'WordPress', 'Video Editing',
-  'Meta Business Suite', 'Google Ads', 'ChatGPT', 'Gemini', 'Claude',
+  'Lovable AI', 'n8n', 'Supabase', 'React', 'Tailwind', 'GitHub',
+  'Oracle ERP', 'HRIS Software', 'MS Excel', 'Google Workspace', 'Canva',
+  'WordPress', 'Meta Business Suite', 'Google Ads', 'ChatGPT', 'Gemini', 'Claude',
 ];
 
 const titleVariants = {
