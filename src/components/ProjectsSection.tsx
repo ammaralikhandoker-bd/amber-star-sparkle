@@ -17,6 +17,23 @@ type Project = {
 
 const projects: Project[] = [
   {
+    title: 'SML Inventory ERP — Step Media Ltd',
+    category: 'web',
+    short: 'AI-powered inventory & store management ERP for Step Media Ltd.',
+    description: 'Designed and developed a full-stack inventory ERP system for Step Media Ltd — covering items, categories, stock in/out, returns, adjustments, requisitions, suppliers, procurement, jobs & delivery, and stock alerts. Built as a vibe-coded AI-assisted web app with live dashboards, MIS reporting, and role-based admin access.',
+    tools: ['AI Web Dev', 'Vibe Coding', 'React', 'Supabase', 'ERP', 'Dashboards'],
+    highlights: ['154 items · 3 categories · 17 groups managed live', 'Real-time stock value & low-stock alerts', 'Full procurement + production workflow', 'Role-based ADMIN access'],
+    link: 'https://sml.pro.bd',
+  },
+  {
+    title: 'n8n Automation Agents',
+    category: 'web',
+    short: 'Basic n8n agent workflows for lead, email & data automation.',
+    description: 'Built basic-level n8n automation agents to connect apps, trigger AI actions, sync data across tools, and automate repetitive HR, lead, and marketing workflows — reducing manual work and speeding up response time.',
+    tools: ['n8n', 'AI Agents', 'Webhooks', 'Automation', 'OpenAI'],
+    highlights: ['Lead capture → CRM automation', 'AI-powered email triage', 'Cross-app data sync workflows'],
+  },
+  {
     title: 'HR & Payroll Management System',
     category: 'hr',
     short: 'End-to-end HR platform for a mid-size company.',
@@ -68,6 +85,7 @@ const projects: Project[] = [
 
 const filters: { key: Category; label: string; icon: typeof Sparkles }[] = [
   { key: 'all', label: 'All', icon: Sparkles },
+  { key: 'web', label: 'AI Web & Automation', icon: Code2 },
   { key: 'hr', label: 'HR Projects', icon: Users },
   { key: 'digital', label: 'Digital Campaigns', icon: TrendingUp },
   { key: 'achievement', label: 'Achievements', icon: Award },
