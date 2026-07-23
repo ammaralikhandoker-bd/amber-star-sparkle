@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import { Users, Package, Sparkles, TrendingUp } from 'lucide-react';
+import { Users, Package, Sparkles, TrendingUp, Code2 } from 'lucide-react';
 
 type Skill = { name: string; level: number };
-type Accent = 'indigo' | 'gold' | 'emerald' | 'cyan';
+type Accent = 'indigo' | 'gold' | 'emerald' | 'cyan' | 'blue';
 
 const hrSkills: Skill[] = [
   { name: 'Oracle ERP / HRIS Operations', level: 92 },
@@ -40,10 +40,19 @@ const marketingSkills: Skill[] = [
   { name: 'WordPress & Web Design', level: 82 },
 ];
 
+const webDevSkills: Skill[] = [
+  { name: 'AI-Powered Web Development', level: 88 },
+  { name: 'Vibe Coding (AI-first workflow)', level: 90 },
+  { name: 'React + Tailwind + TypeScript', level: 82 },
+  { name: 'Supabase / Backend Basics', level: 80 },
+  { name: 'n8n Automation & AI Agents', level: 82 },
+  { name: 'API & Webhook Integrations', level: 78 },
+];
+
 const tools = [
-  'Oracle ERP', 'HRIS Software', 'MS Excel', 'MS Word', 'PowerPoint', 'Outlook',
-  'Google Workspace', 'Canva', 'Freepik', 'WordPress', 'Video Editing',
-  'Meta Business Suite', 'Google Ads', 'ChatGPT', 'Gemini', 'Claude',
+  'Lovable AI', 'n8n', 'Supabase', 'React', 'Tailwind', 'GitHub',
+  'Oracle ERP', 'HRIS Software', 'MS Excel', 'Google Workspace', 'Canva',
+  'WordPress', 'Meta Business Suite', 'Google Ads', 'ChatGPT', 'Gemini', 'Claude',
 ];
 
 const titleVariants = {
@@ -56,6 +65,7 @@ const accentMap: Record<Accent, string> = {
   gold: 'hsl(45 95% 55%)',
   emerald: 'hsl(142 76% 55%)',
   cyan: 'hsl(190 100% 50%)',
+  blue: 'hsl(210 100% 60%)',
 };
 
 const SkillBar = ({ skill, accent, index }: { skill: Skill; accent: Accent; index: number }) => {
@@ -200,6 +210,17 @@ const SkillsSection = () => {
             delay={0.3}
             iconColor="hsl(190 100% 50%)"
             borderColor="hsl(190 100% 50% / 0.35)"
+          />
+          {/* 5. AI Web Dev & Automation */}
+          <SkillCard
+            title="AI Web Dev & Automation"
+            subtitle="Vibe Coding · n8n · Full-Stack Basics"
+            icon={Code2}
+            skills={webDevSkills}
+            accent="blue"
+            delay={0.4}
+            iconColor="hsl(210 100% 60%)"
+            borderColor="hsl(210 100% 60% / 0.35)"
           />
         </div>
 
