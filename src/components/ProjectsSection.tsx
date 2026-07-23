@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, X, Sparkles, Users, TrendingUp, Award } from 'lucide-react';
+import { ExternalLink, X, Sparkles, Users, TrendingUp, Award, Code2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-type Category = 'all' | 'hr' | 'digital' | 'achievement';
+type Category = 'all' | 'hr' | 'digital' | 'achievement' | 'web';
 
 type Project = {
   title: string;
