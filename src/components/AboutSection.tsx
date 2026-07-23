@@ -326,14 +326,16 @@ const AboutSection = () => {
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-4">
               Results-driven HR, Admin & Digital Marketing professional with <span className="text-foreground font-semibold">5+ years</span> of hands-on
               experience across ERP/HRIS operations, inventory management, MIS reporting, and digital campaigns.
-              Government Verified Freelancer (ID: F126497733229) skilled in AI tools, Prompt Engineering,
-              WordPress, Canva, and Video Editing.
+              Now also an <span className="text-foreground font-semibold">AI-powered web developer & vibe coder</span> —
+              recently shipped <a href="https://sml.pro.bd" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">SML Inventory ERP</a> for Step Media Ltd.
+              Government Verified Freelancer (ID: F126497733229) skilled in AI tools, Prompt Engineering, n8n automation, WordPress, and Canva.
             </p>
             <ul className="space-y-2 text-muted-foreground text-sm">
               {[
                 { color: 'bg-primary', text: 'Oracle ERP / HRIS operations · onboarded 100+ employees with 99% data accuracy' },
+                { color: 'bg-secondary', text: 'AI-powered web dev · shipped SML Inventory ERP (sml.pro.bd) via vibe coding' },
+                { color: 'bg-primary', text: 'n8n agent development · basic-level automation workflows & AI agents' },
                 { color: 'bg-secondary', text: '50+ digital campaigns delivered · 500+ qualified leads generated' },
-                { color: 'bg-primary', text: 'AI-powered workflows · Prompt Engineering, ChatGPT, Gemini, Claude' },
               ].map((item, i) => (
                 <motion.li
                   key={i}

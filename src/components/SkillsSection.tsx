@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Users, Package, Sparkles, TrendingUp, Code2 } from 'lucide-react';
 
 type Skill = { name: string; level: number };
-type Accent = 'indigo' | 'gold' | 'emerald' | 'cyan';
+type Accent = 'indigo' | 'gold' | 'emerald' | 'cyan' | 'blue';
 
 const hrSkills: Skill[] = [
   { name: 'Oracle ERP / HRIS Operations', level: 92 },
@@ -65,6 +65,7 @@ const accentMap: Record<Accent, string> = {
   gold: 'hsl(45 95% 55%)',
   emerald: 'hsl(142 76% 55%)',
   cyan: 'hsl(190 100% 50%)',
+  blue: 'hsl(210 100% 60%)',
 };
 
 const SkillBar = ({ skill, accent, index }: { skill: Skill; accent: Accent; index: number }) => {
@@ -209,6 +210,17 @@ const SkillsSection = () => {
             delay={0.3}
             iconColor="hsl(190 100% 50%)"
             borderColor="hsl(190 100% 50% / 0.35)"
+          />
+          {/* 5. AI Web Dev & Automation */}
+          <SkillCard
+            title="AI Web Dev & Automation"
+            subtitle="Vibe Coding · n8n · Full-Stack Basics"
+            icon={Code2}
+            skills={webDevSkills}
+            accent="blue"
+            delay={0.4}
+            iconColor="hsl(210 100% 60%)"
+            borderColor="hsl(210 100% 60% / 0.35)"
           />
         </div>
 
