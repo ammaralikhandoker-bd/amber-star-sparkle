@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, GraduationCap, Send, PhoneCall, Navigation, BookOp
 import { useState } from 'react';
 import { toast } from 'sonner';
 import aboutPhoto from '@/assets/about-photo.jpg';
-import passportPhoto from '@/assets/amber-passport.jpg.asset.json';
+import passportPhoto from '@/assets/amber-about.png.asset.json';
 import signatureImg from '@/assets/amber-signature.jpg.asset.json';
 
 const containerVariants = {
