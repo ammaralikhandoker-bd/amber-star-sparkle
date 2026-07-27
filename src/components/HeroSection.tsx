@@ -2,7 +2,8 @@ import { motion } from 'framer-motion';
 import { Download, BadgeCheck, Award, Briefcase, Users, ArrowRight, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import TypewriterText from './TypewriterText';
-import profileImage from '@/assets/profile.jpg';
+import heroAsset from '@/assets/hero-amber.png.asset.json';
+const profileImage = heroAsset.url;
 
 
 const roles = [
